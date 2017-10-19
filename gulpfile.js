@@ -7,10 +7,12 @@ const gulp = require('gulp'),
       autoprefixer = require('gulp-autoprefixer'),
       uglify = require('gulp-uglify'),
       concat = require('gulp-concat'),
-      plumber = require('gulp-plumber');
-      sync = require('browser-sync').create();
-      del = require('del');
-      pug = require('gulp-pug');
+      plumber = require('gulp-plumber'),
+      sync = require('browser-sync').create(),
+      del = require('del'),
+      syntax = require('postcss-scss'),
+      postcss    = require('gulp-postcss'),
+      sourcemaps = require('gulp-sourcemaps');
 
 /*************** TASK CSS ***************/
 
@@ -57,6 +59,15 @@ gulp.task( 'minify', ['sass', 'autoprefixer', 'comb', 'indentcss'], function(){
         .pipe(sync.stream());
 });
 
+gulp.task('postcss', function () {
+    return gulp.src('./dist/styles/main.css')
+        .pipe( sourcemaps.init() )
+        .pipe( postcss([ require('precss'), require('autoprefixer') ]) )
+        .pipe( sourcemaps.write('.') )
+        .pipe( gulp.dest('./dist/styles') )
+        .pipe(sync.stream());
+});
+
 /*************** TASK JS ***************/
 
 gulp.task( 'js', function(){
@@ -69,15 +80,8 @@ gulp.task( 'js', function(){
         .pipe(sync.stream());
 } );
 
-/*************** TASK Template pug ***************/
 
-gulp.task( 'template', function(){
-  return gulp.src('src/pages/**/*.pug')
-    .pipe(pug())
-    .pipe(gulp.dest('dist/'))
-    .pipe(sync.stream());
-});
-
+/*************** Main ***************/
 
 //Vide le dossier dist
 function clean() {
@@ -91,14 +95,14 @@ gulp.task('build', function(){
   gulp.start('indentcss');
   gulp.start('minify');
   gulp.start('js');
-  gulp.start('template');
+  gulp.start('postcss');
 });
 
 /*************** WATCH ***************/
 
 gulp.task ( 'default', function(){
 
-    gulp.watch ('./src/sass/main.scss',['sass','minify','comb','indentcss'])
+    gulp.watch ('./src/sass/main.scss',['sass','minify','comb','indentcss','postcss'])
     gulp.watch ('./src/js/script.js', ['js'])
     gulp.watch ('./src/pages/**/*.pug', ['template'])
 });
