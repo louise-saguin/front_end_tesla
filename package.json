@@ -25,6 +25,7 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^2.0.0",
     "postcss-scss": "^1.0.2",
-    "postcss-use": "^2.3.0"
+    "postcss-use": "^2.3.0",
+    "precss": "^2.0.0"
   }
 }
