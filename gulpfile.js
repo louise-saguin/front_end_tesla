@@ -76,6 +76,7 @@ gulp.task( 'js', function(){
         .pipe( plumber() )
         .pipe( concat( 'script.min.js' ) )
         .pipe( uglify() )
+        .pipe( rename('main.min.js') )
         .pipe( gulp.dest('./dist/js/' ) )
         .pipe(sync.stream());
 } );
@@ -84,18 +85,18 @@ gulp.task( 'js', function(){
 /*************** Main ***************/
 
 //Vide le dossier dist
-function clean() {
+gulp.task( 'clean', function(){
   return del(['dist']);
-}
+} );
 
 gulp.task('build', function(){
-  // clean();
+  // gulp.start('clean');
   gulp.start('sass');
   gulp.start('comb');
   gulp.start('indentcss');
   gulp.start('minify');
   gulp.start('js');
-  gulp.start('postcss');
+  // gulp.start('postcss');
 });
 
 /*************** WATCH ***************/
