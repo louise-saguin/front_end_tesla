@@ -80,30 +80,32 @@ gulp.task( 'js', function(){
         .pipe( gulp.dest('./dist/js/' ) )
         .pipe(sync.stream());
 } );
-
-
 /*************** Main ***************/
 
 //Vide le dossier dist
-gulp.task( 'clean', function(){
-  return del(['dist']);
-} );
+function clean() {
+    gulp.task( 'clean', function(){
+        return del(['dist']);
+    } )
+} ;
 
 gulp.task('build', function(){
-  // gulp.start('clean');
-  gulp.start('sass');
-  gulp.start('comb');
-  gulp.start('indentcss');
-  gulp.start('minify');
-  gulp.start('js');
-  // gulp.start('postcss');
+    // clean();
+    // gulp.start('clean');
+    gulp.start('sass');
+    gulp.start('comb');
+    gulp.start('indentcss');
+    gulp.start('minify');
+    gulp.start('js');
+    gulp.start('postcss');
+    // gulp.start('postcss');
 });
 
 /*************** WATCH ***************/
 
 gulp.task ( 'default', function(){
 
-    gulp.watch ('./src/sass/main.scss',['sass','minify','comb','indentcss','postcss'])
+    gulp.watch ('./src/**/*.scss',['sass','minify','comb','indentcss','postcss'])
     gulp.watch ('./src/js/script.js', ['js'])
-    gulp.watch ('./src/pages/**/*.pug', ['template'])
 });
+

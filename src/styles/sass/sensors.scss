@@ -1,0 +1,33 @@
+.sensors {
+    background-color: $white;
+    padding-bottom: 100px;
+
+    @include medium {
+        
+        height: inherit;
+        padding-bottom: 150px;
+    }
+}
+
+.sensors__img {
+    width: 100%;
+}
+
+.sensors__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+.sensors__legend {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    
+    @include medium {
+        width: 16.66%;
+    }
+
+}

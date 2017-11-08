@@ -1,0 +1,87 @@
+//@import "config.scss";
+
+.motor {
+    padding: 75px 0px 110px 0px;
+
+    @include medium {
+        margin-top: 440px;
+        padding: 0px;
+    }
+}
+
+.motor__block {
+
+    @include medium {
+        display: flex;
+        height: 450px;
+    }
+}
+
+
+.motor__img {
+
+    img {
+        width: 100%;
+        padding: 50px 0px;
+    }
+
+    @include medium {
+        width: 50%;
+        position: relative;
+        
+        img {
+            width: auto;
+            padding: 0;
+            position: absolute;
+            top: -15%;
+            right: 0;
+            height: 100%;
+        }
+    }
+}
+
+.motor__img-end {
+    display: none;
+    
+    @include medium {
+        display: block;
+        width: 50%;
+        position: relative;
+        
+        img {
+            width: auto;
+            padding: 0;
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            height: 100%;
+        }
+    }
+}
+
+.motor__title {
+    text-align: center;
+    color: $dark-grey;
+
+    @include medium {
+        text-align: right;
+    }
+}
+
+.motor__text {
+
+    p {
+        text-align: center;
+        color: $dark-grey;
+    }
+    
+    @include medium {
+        width: 50%;
+        
+        p {
+            padding-top: 100px;
+            text-align: right;
+        }
+    }
+}
+

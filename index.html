@@ -4,19 +4,203 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
         <title>Tesla model S</title>
-        <link rel="stylesheet" href="dist/styles/reset.css">
         <link rel="stylesheet" href="dist/styles/main.css">
     </head>
 
     <body>
 
+        <header>
+            <nav class="menu">
+                <div class="container">
 
-        <script src="dist/js/script.min.js"></script>
-        <script>
-            if ('addEventListener' in document) {
-                document.addEventListener('DOMContentLoaded', function() {
-                    FastClick.attach(document.body);}, false);}
-        </script>
+                    <div class="menu__content">
+
+                        <div class="menu__link">
+
+
+                            <a><img class="menu__logo--small" src="src/img/mobile-tesla-logo.png">
+                                <img class="menu__logo--large" src="src/img/Tesla_Motors_Logo_large.png">
+                            </a>
+                            <a>Performances</a>
+                            <a>Autonomie</a>
+                            <a>Sécurité</a>
+                            <a>Moteur</a>
+                            <a>écran tactile</a>
+                            <a>Personnaliser</a>
+                        </div>
+
+                        <div class="menu__burger">
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+
+            <div class="intro">
+                <video autoplay muted loop src="src/img/tesla_modelS_vid.mp4"></video>
+                <div class="container">
+                    <h1>Conquérir <br> la model S</h1>
+                </div>
+            </div>
+        </header>
+
+        <section class="performances">
+            <div class="container">
+
+                <div class="performances__scroll">
+                    <div class="performances__circle"></div>
+                    <div class="performances__line"></div>
+                </div>
+
+                <div class="performances__block">
+                    <div class="performances__img">
+                        <img src="src/img/Red_Bay-1440.jpg">
+                    </div>
+
+                    <div class="performances__content">
+                        <h2 class="performances__title">Performances</h2>
+                        <p class="performances__text">
+                            La Model S a été conçue pour être la berline la plus sûre et la plus exaltante. Grâce aux performances hors-normes apportées par la transmission intégrale électrique Tesla, la Model S est capable d'accélérer de 0 à 100 km/h en seulement 2,7 secondes. La Model S bénéficie du Pilotage automatique Tesla conçu pour rendre vos trajets sur autoroute à la fois plus sûrs et moins stressants.
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+
+                <div class="features__block">
+                    <div class="features__content">
+                        <h3 class="features__title">Phares adaptatifs</h3>
+                        <p class="features__text">
+                            La Model S est équipée de phares Full LED adaptatifs. Ils affirment les lignes du véhicule et contribuent à une sécurité renforcée : 14 feux LED pouvant s’ajuster automatiquement sur trois positions différentes permettent d’améliorer la visibilité de nuit, notamment sur les routes sinueuse.
+                        </p>
+                    </div>
+
+                    <div class="features__img">
+                        <img src="src/img/features--adaptive-headlights.png" >
+                    </div>
+                </div>
+
+                <div class="features__block">
+                    <div class="features__content">
+                        <h3 class="features__title">Système de défense contre les armes biologiques</h3>
+                        <p class="features__text">
+                            Un filtre HEPA de qualité médicale purifie l'air extérieur en éliminant 99,97% des pollens, bactéries, virus et polluants. Trois modes sont disponibles : circulation avec air extérieur, re-circulation de l'air intérieur ou mode de défense contre les armes biologiques, qui crée une pression positive empêchant l'air extérieur de pénétrer dans l'habitacle.
+                        </p>
+                    </div>
+
+                    <div class="features__img">
+                        <img src="src/img/features--hepa-filter.png">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="automation">
+            <div class="container">
+
+                <h2 class="automation__title">Conduite automatique</h2>
+                <p class="automation__text">
+                    Tous les véhicules Tesla produits dans notre usine, y compris la Model 3, bénéficient des équipements nécessaires à la conduite autonome, offrant un niveau de sécurité largement supérieur à un conducteur humain.
+                </p>
+            </div>
+
+            <div class="automation__video">
+                <video autoplay loop src="src/img/pilotage_autonome.mp4"></video>
+            </div>
+        </section>
+
+        <section class="sensors">
+            <div class="container">
+                <img class="sensors__img" src="src/img/cameras-ultrasonics.png">
+                
+                
+
+                <div class="sensors__block">
+                    <div class="sensors__legend">
+                        <p>Capteurs ultrasoniques</p>
+                        <input type="chexbox">
+                    </div>
+
+                    <div class="sensors__legend">
+                        <p>Caméras arrière</p>
+                        <input type="chexbox">
+                    </div>
+                    <div class="sensors__legend">
+                        <p>Caméras latérales orientées vers l'avant</p>
+                        <input type="chexbox">
+                    </div>
+                    <div class="sensors__legend">
+                        <p>Caméras avant, grand angle et longue distance</p>
+                        <input type="chexbox">
+                    </div>
+                    <div class="sensors__legend">
+                        <p>Caméras latérales orientées vers l'arrière</p>
+                        <input type="chexbox">
+                    </div>
+                    <div class="sensors__legend">
+                        <p>Radar</p>
+                        <input type="chexbox">
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="security">
+            <div class="container">
+
+                <div class="security__block">
+                    <div class="security__content">
+                        <h2 class="security__title">Security</h2>
+                        <p class="security__text">
+                            La Model S a été conçue à partir d’une feuille blanche pour être le véhicule le plus sûr en circulation. L'agencement du groupe motopropulseur, situé sous l'habitacle en aluminium, permet d'abaisser le centre de gravité du véhicule, ce qui améliore la tenue de route et réduit le risque de retournement. L'absence d'un moteur à combustion à l'avant laisse place à un espace volumineux absorbant les impacts en cas de choc frontal.
+                        </p>
+                    </div>
+
+                    <img src="src/img/tesla_security.png">
+                    <img src="src/img/tesla_security_rotate.png">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="motor">
+            <div class="container">
+
+                <h2 class="motor__title">Moteur électrique</h2>
+
+                <div class="motor__block">
+                    <div class="motor__img">
+                        <img src="src/img/tesla_motor.jpg">
+                    </div>
+
+                    <div class="motor__text">
+                        <p>
+                            La Model S Dual Motor représente une amélioration majeure vis-à-vis des systèmes classiques de transmission intégrale. Grâce à ses deux moteurs, dont l'un est situé à l'avant et l'autre à l'arrière, la Model S contrôle le couple transmis aux essieux avant et arrière de manière indépendante, via le système embarqué. Résultat : une motricité inégalée dans toutes les conditions météorologiques.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="motor__block">
+                    <div class="motor__text">
+                    </div>
+
+                    <div class="motor__img-end">
+                        <img src="src/img/tesla_motor.jpg">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <script src="dist/js/script.js"></script>
 
     </body>
 

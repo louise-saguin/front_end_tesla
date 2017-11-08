@@ -1,0 +1,44 @@
+//@import 'config.scss';
+
+.intro {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    
+    @include large {
+        margin-bottom: -2px;
+    }
+
+    video {
+        height: 100%;
+        @include centerX;
+        z-index: -1;
+        
+        @include large {
+            height: 120%;
+        }
+        
+    }
+
+    h1 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+
+        @include medium {
+            position: inherit;
+            top: inherit;
+            left: inherit;
+            transform: inherit;
+            width: 100%; 
+            padding-top: 60vh;
+            text-align: left;
+        }
+    }
+}
+
+
+

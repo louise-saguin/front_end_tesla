@@ -1,0 +1,73 @@
+//@import "config.scss";
+
+.security {
+    padding: 70px 0px 110px 0px;
+    background-color: $black;
+    
+    @include medium {
+        padding: 0;
+    }
+}
+
+.security__block {
+    
+    img {
+        display: none;
+    }
+
+    @include medium {
+        position: relative;
+
+        img {
+            display: block;
+            position: absolute;
+
+            &:nth-child(2) {
+                top: -10%;
+                right: -10%;
+                max-height: 730px;
+            }
+
+            &:nth-child(3) {          
+                top: 80%;
+                right: -10%;
+                max-height: 430px;
+            }
+        }
+
+    }
+}
+
+.security__content {
+
+    @include medium {
+        width: 50%;
+        padding-left: 40px;
+    }
+}
+
+.security__title {
+    text-align: center;
+    padding: 40px 0px 40px 0px;
+    color: $white;
+    
+    @include medium {
+        padding: 100px 0px 40px 0px;
+        text-align: left;
+    }  
+    
+     @include medium {
+        padding: 100px 0px 40px 0px;
+    }
+}
+
+.security__text{
+    padding-bottom: 200px;
+    text-align: center;
+    color: $white;
+    
+     @include medium {
+        text-align: left;
+    }  
+}
+

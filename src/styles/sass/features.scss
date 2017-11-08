@@ -1,0 +1,63 @@
+//@import "config.scss";
+
+.features {
+    padding-bottom: 100px;
+
+    @include medium {
+        padding-top: 190px;
+    }
+}
+
+.features__block {
+
+    @include medium{
+        display: flex;
+        width: 100%;
+        height: 440px;
+
+        &:first-child {
+            flex-direction: row-reverse;
+        }
+        
+        &:last-child {
+             padding-left: 100px;
+        }
+    }
+}
+
+.features__content {
+
+    @include medium {
+        width: 55%;
+    }
+}
+
+.features__img {
+
+    img {
+        width: 100%;
+    }
+
+    @include medium {
+        display: flex;
+        width: 45%;
+
+        img {
+            padding-right: 55px;
+            min-width:250px;
+            max-width:380px;
+            height: auto;
+            align-self:flex-start;
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+.features__text {
+    padding-top: 60px;
+    color: $black;
+}
+
+
+
+

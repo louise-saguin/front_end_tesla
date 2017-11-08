@@ -2,3 +2,6 @@
 /dist
 yarn-error.log
 /.vscode
+/src/img
+
+

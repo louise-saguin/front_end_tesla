@@ -1,0 +1,55 @@
+//@import "config.scss";
+
+.automation {
+    background-color: $black;
+    padding-top: 70px;
+    
+    @include medium {
+        position: relative;
+        height: 725px;
+    }
+}
+
+.automation__title {
+    text-align: center;
+    color: $white;
+
+    @include medium{
+        text-align: left;
+    }
+}
+
+.automation__text {
+    text-align: center;
+    padding: 70px 0px 100px 0px;
+    color: $white;
+
+    @include medium{
+        text-align: left;
+    }
+}
+
+.automation__video {
+
+    video {
+        width: 100%;
+        margin-bottom: -4px;
+    }
+
+    @include medium {
+        width: 90%;
+        position: relative;
+        top: 63%;
+        @include centerX;
+        
+        video {
+            top:0%;
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    @include large {
+        width: 90%;
+    }
+}

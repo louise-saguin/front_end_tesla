@@ -1,14 +1,173 @@
-$medium: 768px;
-$large: 1024px;
+// RESPONSIVE
+
+$medium: 910px;
+$large: 1200px;
 
 @mixin medium {
-  @media (min-width: #{$medium}) {
-    @content;
-  }
+    @media (min-width: #{$medium}) {
+        @content;
+    }
 }
 
 @mixin large {
-  @media (min-width: #{$large}) {
-    @content;
-  }
+    @media (min-width: #{$large}) {
+        @content;
+    }
 }
+
+// FONT 
+
+$font-family: 'CamphorPro';
+$font-bold: 700;
+$font-heavy: 800;
+$font-light: 200;
+
+@font-face {
+    font-family: 'CamphorPro';
+    src: url('../../src/font/CamphorPro/CamphorPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CamphorPro';
+    src: url('../../src/font/CamphorPro/CamphorPro-Heavy.ttf') format('truetype');
+    font-weight: $font-heavy;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CamphorPro';
+    src: url('../../src/font/CamphorPro/CamphorPro-Light.ttf') format('truetype');
+    font-weight: $font-light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CamphorPro';
+    src: url('../../src/font/CamphorPro/CamphorPro-Bold.ttf') format('truetype');
+    font-weight: $font-bold;
+    font-style: normal;
+}
+
+
+// COLORS
+
+$black: #131313;
+$dark-grey: #262626;
+
+$white: #ffffff;
+
+$red: #b10719;
+
+// PAGE
+
+* {
+    box-sizing: border-box;
+    font-smoothing: antialiased;
+}
+
+html, body {
+    min-width: 320px;
+    font-family: $font-family;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    padding: 0px 40px;
+
+    @include medium {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    @include large {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.clear {
+    clear: both;
+}
+
+// ELEMENT
+
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $black;
+}
+
+h1 {
+    font-size: 37px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: $font-heavy;
+    line-height: 49px;
+    
+    @include medium {
+        font-size: 50px;
+        line-height: 51px;
+    }
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 49px;
+}
+
+h3 {
+    line-height: 37px;
+    font-size: 24px;
+    color: $dark-grey;
+
+}
+
+p {
+    line-height: 33px;
+    font-weight: $font-light;
+    
+    @include medium {
+        font-size: 13px;
+        line-height: 28px;
+    }
+
+}
+
+// TOOLS
+
+@mixin centerX {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin centerY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin centerXY {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin fullBackground {
+    background-size: cover;
+    background-position: center center;
+}
+
+@mixin centerDiv {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// ANIMATION
+
+
+
