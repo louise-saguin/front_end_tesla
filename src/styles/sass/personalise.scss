@@ -1,0 +1,74 @@
+.personalize-section {
+  position: relative;
+  padding: $section-padding;
+
+  h1 {
+    width: $full-width;
+    text-align: center;
+    color: $black;
+  }
+
+  h2 {
+    width: $full-width;
+    text-align: center;
+    padding: $section-padding;
+  }
+
+}
+
+.colors {
+  width: 100%;
+  text-align: center;
+  height: $colors-ring;
+  margin-bottom: $section-padding;
+
+  .color {
+    display: inline-block;
+    background: $inner-color;
+    width: $colors-ring;
+    height: $colors-ring;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  .inner-color {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    transform-origin: center center;
+    transform: scale(0.5);
+    transition: transform 0.3s;
+  }
+
+  .inner-color.active {
+    transform: scale(1);
+    cursor: default;
+  }
+
+  .black.inner-color {
+    background: $black;
+  }
+  .grey.inner-color {
+    background: $grey;
+  }
+  .black_metal.inner-color {
+    background: $black_metal;
+  }
+  .blue.inner-color {
+    background: $blue;
+  }
+  .silver.inner-color {
+    background: $silver;
+  }
+  .white.inner-color {
+    background: $white;
+  }
+  .red.inner-color {
+    background: $red;
+  }
+}
+
+.cars {
+  width: 100%;
+  text-align: center;
+}
