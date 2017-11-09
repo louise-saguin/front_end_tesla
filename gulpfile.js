@@ -6,41 +6,50 @@ const csscomb = require('gulp-csscomb')
 const indent = require('gulp-indent')
 const autoprefixer = require('gulp-autoprefixer')
 const uglify = require('gulp-uglify')
-const concat = require('gulp-concat')
 const plumber = require('gulp-plumber')
 const sync = require('browser-sync').create()
 const del = require('del')
 const postcss = require('gulp-postcss')
 const sourcemaps = require('gulp-sourcemaps')
+const babelify = require('babelify')
+const browserify = require('browserify')
+const gulpif = require('gulp-if')
+const source = require('vinyl-source-stream')
+const buffer = require('vinyl-buffer')
+
+let isProd = process.env.NODE_ENV === 'production'
 
 /** TASK CSS ***************/
 
 gulp.task('sass', function () {
   return gulp.src('./src/styles/sass/main.scss')
-      .pipe(plumber())
-      .pipe(sass().on('error', sass.logError))
-      .pipe(autoprefixer({browsers: ['last 3 version'], cascade: true}))
-      .pipe(csscomb())
-      .pipe(indent({tabs: true, amount: 1}))
-      .pipe(cssnano())
-      .pipe(sourcemaps.init())
-      .pipe(postcss([ require('precss'), require('autoprefixer') ]))
-      .pipe(sourcemaps.write('.'))
-      .pipe(rename('main.min.css'))
-      .pipe(gulp.dest('./dist/styles'))
-      .pipe(sync.stream())
+  .pipe(sourcemaps.init())
+  .pipe(plumber())
+  .pipe(sass().on('error', sass.logError))
+  .pipe(autoprefixer({browsers: ['last 3 version'], cascade: true}))
+  .pipe(csscomb())
+  .pipe(indent({tabs: true, amount: 1}))
+  .pipe(cssnano())
+  .pipe(postcss([ require('precss'), require('autoprefixer') ]))
+  .pipe(sourcemaps.write('.'))
+  .pipe(rename('main.min.css'))
+  .pipe(gulp.dest('./dist/styles'))
+  .pipe(sync.stream())
 })
 
 /** TASK JS ***************/
 
 gulp.task('js', function () {
-  return gulp.src(['./src/js/script.js', './src/js/fastclick.js'])
-        // .pipe(plumber())
-        .pipe(concat('script.min.js'))
-        .pipe(uglify())
-        .pipe(rename('main.min.js'))
-        .pipe(gulp.dest('./dist/js/'))
-        .pipe(sync.stream())
+  return browserify({entries: ['src/js/script.js'], debug: true})
+  .transform(babelify, {presets: 'es2015'})
+  .bundle()
+  .pipe(source('script.js'))
+  .pipe(buffer())
+  .pipe(gulpif(!isProd, sourcemaps.init({loadMaps: true})))
+  .pipe(uglify())
+  .pipe(gulpif(!isProd, sourcemaps.write('.')))
+  .pipe(gulp.dest('dist/js'))
+  .pipe(sync.stream())
 })
 /** Main ***************/
 
@@ -54,16 +63,12 @@ function clean () {
 gulp.task('build', function () {
   clean()
   gulp.start('sass')
-  gulp.start('comb')
-  gulp.start('indentcss')
-  gulp.start('minify')
   gulp.start('js')
-  gulp.start('postcss')
 })
 
 /** WATCH ***************/
 
 gulp.task('default', function () {
-  gulp.watch('./src/**/*.scss', ['sass', 'minify', 'comb', 'indentcss', 'postcss'])
+  gulp.watch('./src/**/*.scss', ['sass'])
   gulp.watch('./src/js/script.js', ['js'])
 })

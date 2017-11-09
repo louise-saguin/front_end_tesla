@@ -1,7 +1,7 @@
 const carColor = document.querySelector('.current-car-color')
 const colorsBtn = document.querySelectorAll('.color')
 const colors = {
-  balck: 'src/img/black-noir-uni.png',
+  black: 'src/img/black-noir-uni.png',
   grey: 'src/img/mdinight-silver-gris-nuit.png',
   black_metal: 'src/img/obsidian-black-noir-obsidien.png',
   blue: 'src/img/deep-blue-bleu-outremer.png',
