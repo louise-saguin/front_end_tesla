@@ -11,7 +11,7 @@
   <div class="personalize-section">
     <h1>Personaliser votre rêve</h1>
 
-      <h2>Extérieur</h2>
+    <h2>Extérieur</h2>
 
     <div class="colors">
       <div class="color black" data-id="0"><div class="black inner-color active"></div></div>
@@ -24,15 +24,19 @@
     </div>
 
     <div class="cars">
-      <img src="src/img/black-noir-uni.png" class="current-car-color" alt="">
-    </div>
+      <picture class="current-car-color">
+        <source media="(min-width: 650px)" srcset="src/img/black-noir-uni.png">
+          <source media="(min-width: 465px)" srcset="src/img/black-noir-uni-450.png">
+            <img src="src/img/black-noir-uni-300.png" alt="">
+          </picture>
+        </div>
 
 
-  </div>
+      </div>
 
 
-  <script src="src/js/script.js"></script>
+      <script src="src/js/script.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>
