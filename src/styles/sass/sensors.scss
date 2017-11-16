@@ -3,17 +3,29 @@
     padding-bottom: 100px;
 
     @include medium {
-        
-        height: inherit;
-        padding-bottom: 150px;
+        height: 1200px;
+        padding-top:190px;
+    }
+
+    @include large {
+        padding-top:430px;
     }
 }
 
 .sensors__img {
     width: 100%;
+    position: relative;
+
+    img {
+        position: absolute;
+        top:0%;
+        left:0%;
+        width: 100%;
+    }
 }
 
 .sensors__block {
+    padding-top: 500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,9 +37,25 @@
     width: 100%;
     text-align: center;
     padding: 5px;
-    
+    position: relative;
+
+    input {
+        width: 25px;
+        height: 25px;
+        border: 2px solid #dadada;
+    }
+
     @include medium {
         width: 16.66%;
     }
+<<<<<<< HEAD
 
 }
+=======
+    
+    @include large {
+        padding-top: 100px;
+    }
+}
+
+>>>>>>> update sensors personalize section

@@ -21,12 +21,12 @@
                             <a><img class="menu__logo--small" src="src/img/mobile-tesla-logo.png">
                                 <img class="menu__logo--large" src="src/img/Tesla_Motors_Logo_large.png">
                             </a>
-                            <a>Performances</a>
-                            <a>Autonomie</a>
-                            <a>Sécurité</a>
-                            <a>Moteur</a>
+                            <a href="#performances">Performances</a>
+                            <a href="#autonomie">Autonomie</a>
+                            <a href="#security">Sécurité</a>
+                            <a href="#motor">Moteur</a>
                             <a>écran tactile</a>
-                            <a>Personnaliser</a>
+                            <a href="personalise.html">Personnaliser</a>
                         </div>
 
                         <div class="menu__burger">
@@ -44,7 +44,7 @@
             </div>
         </header>
 
-        <section class="performances">
+        <section class="performances" id="performances">
             <div class="container">
 
                 <div class="performances__scroll">
@@ -69,7 +69,7 @@
             </div>
         </section>
 
-        <section class="features">
+        <section class="features" id="features">
             <div class="container">
 
                 <div class="features__block">
@@ -101,7 +101,7 @@
 
         </section>
 
-        <section class="automation">
+        <section class="automation" id="automation">
             <div class="container">
 
                 <h2 class="automation__title">Conduite automatique</h2>
@@ -115,21 +115,31 @@
             </div>
         </section>
 
-        <section class="sensors">
+
             <div class="container">
                 <img class="sensors__img" src="src/img/cameras-ultrasonics.png">
 
+        <section class="sensors" id="sensors">
 
+            <div class="sensors__img">
+                <img class="sensors__img" src="src/img/camera-ultrasonics.png">
+                <img class="sensors__img" src="src/img/cameras-radar.png">
+                <img class="sensors__img" src="src/img/cameras-rear.png">
+                <img class="sensors__img" src="src/img/camera-side_front.png">
+                <img class="sensors__img" src="src/img/camera-side_rear.png">
+                <img class="sensors__img" src="src/img/camera-triclops.png">
+                <img class="sensors__img" src="src/img/car.png">
+            </div>
 
+            <div class="container">
                 <div class="sensors__block">
                     <div class="sensors__legend">
                         <p>Capteurs ultrasoniques</p>
                         <input type="chexbox">
                     </div>
-
                     <div class="sensors__legend">
                         <p>Caméras arrière</p>
-                        <input type="chexbox">
+                        <input class= "check" type="chexbox">
                     </div>
                     <div class="sensors__legend">
                         <p>Caméras latérales orientées vers l'avant</p>
@@ -152,7 +162,7 @@
             </div>
         </section>
 
-        <section class="security">
+        <section class="security" id="security">
             <div class="container">
 
                 <div class="security__block">
@@ -170,7 +180,7 @@
             </div>
         </section>
 
-        <section class="motor">
+        <section class="motor" id="motor">
             <div class="container">
 
                 <h2 class="motor__title">Moteur électrique</h2>
@@ -198,6 +208,27 @@
 
             </div>
         </section>
+
+        <div class="personalize">
+            <h1>Personaliser votre rêve</h1>
+
+            <h2>Extérieur</h2>
+
+            <div class="personalize__colors">
+                <div class="color black" data-id="0"><div class="black inner-color active"></div></div>
+                <div class="color grey" data-id="1"><div class="grey inner-color"></div></div>
+                <div class="color black_metal" data-id="2"><div class="black_metal inner-color"></div></div>
+                <div class="color blue" data-id="3"><div class="blue inner-color"></div></div>
+                <div class="color silver" data-id="4"><div class="silver inner-color"></div></div>
+                <div class="color white" data-id="5"><div class="white inner-color"></div></div>
+                <div class="color red" data-id="6"><div class="red inner-color"></div></div>
+            </div>
+
+            <div class="personalize__cars">
+                <img src="src/img/black-noir-uni.png" class="current-car-color" alt="">
+            </div>
+
+        </div>
 
 
         <script src="dist/js/main.min.js"></script>
