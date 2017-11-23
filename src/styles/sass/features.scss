@@ -18,9 +18,9 @@
         &:first-child {
             flex-direction: row-reverse;
         }
-        
+
         &:last-child {
-             padding-left: 100px;
+            padding-left: 100px;
         }
     }
 }
@@ -28,7 +28,8 @@
 .features__content {
 
     @include medium {
-        width: 55%;
+        width: 57%;
+        position: relative;
     }
 }
 
@@ -40,7 +41,7 @@
 
     @include medium {
         display: flex;
-        width: 45%;
+        width: 43%;
 
         img {
             padding-right: 55px;
@@ -53,11 +54,55 @@
     }
 }
 
+.features__title {
+
+    @include medium {
+        position: relative;
+    }
+}
+
+.features__bar-one, features__bar-two {
+    display: none;
+    height : 5px;
+    position: absolute;
+
+    @include medium{
+        display: block;
+    }
+}
+
+.features__bar-one {
+    transform: rotate(180deg) translateX(-50%);
+    left: -7%;
+    top: 50%;
+  
+}
+
+.features__bar-two {
+    @include centerY;
+    right: -7%;
+}
+
+.features__line {
+    width: 100px;
+    height: 1px;
+    background-color: #8d8d8d;
+    @include centerY;
+    margin-left: 5px;
+}
+
+.features__circle {
+    border-radius: 50%;
+    border: 1px solid #8d8d8d;
+    width: 5px;
+    height: 5px;
+    @include centerY;
+}
+
 .features__text {
     padding-top: 60px;
     color: $black;
 }
-
 
 
 

@@ -113,7 +113,8 @@ html, body {
 a {
     text-transform: uppercase;
     text-decoration: none;
-    color: $black;
+    font-weight: $font-bold;
+    color: $white;
 }
 
 h1 {
@@ -146,7 +147,7 @@ p {
     font-weight: $font-light;
 
     @include medium {
-        font-size: 13px;
+        font-size: 16.5px;
         line-height: 28px;
     }
 

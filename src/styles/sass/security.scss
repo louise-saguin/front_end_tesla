@@ -1,16 +1,16 @@
 //@import "config.scss";
 
 .security {
-    padding: 70px 0px 110px 0px;
+    padding: 70px 0px 70px 0px;
     background-color: $black;
-    
+
     @include medium {
         padding: 0;
     }
 }
 
 .security__block {
-    
+
     img {
         display: none;
     }
@@ -48,25 +48,25 @@
 
 .security__title {
     text-align: center;
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0px;
     color: $white;
-    
+
     @include medium {
         padding: 100px 0px 40px 0px;
         text-align: left;
     }  
-    
-     @include medium {
+
+    @include medium {
         padding: 100px 0px 40px 0px;
     }
 }
 
 .security__text{
-    padding-bottom: 200px;
     text-align: center;
     color: $white;
-    
-     @include medium {
+
+    @include medium {
+        padding-bottom: 200px;
         text-align: left;
     }  
 }
