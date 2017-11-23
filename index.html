@@ -25,8 +25,8 @@
                             <a href="#autonomie">Autonomie</a>
                             <a href="#security">Sécurité</a>
                             <a href="#motor">Moteur</a>
-                            <a>écran tactile</a>
-                            <a href="personalise.html">Personnaliser</a>
+                            <a href="#tactileScreen">écran tactile</a>
+                            <a href="#" class="personaliseTesla">Personnaliser</a>
                         </div>
 
                         <div class="menu__burger">
@@ -116,7 +116,7 @@
 
         </section>
 
-        <section class="automation" id="automation">
+        <section class="automation" id="autonomie">
             <div class="automation__content">
                 <div class="container">
                     <h2 class="automation__title">Conduite automatique</h2>
@@ -223,30 +223,71 @@
             </div>
         </section>
 
-        <!--
-<div class="personalize">
-<h1>Personaliser votre rêve</h1>
+        <section class="tactile__screen" id="tactileScreen">
+            <div class="container">
 
-<h2>Extérieur</h2>
+                <div class="tactile__screen__block">
+                    <div class="tactile__screen__content">
+                        <h3 class="tactile__screen__title">Phares adaptatifs</h3>
+                        <p class="tactile__screen__text">
+                            La Model S est équipée de phares Full LED adaptatifs. Ils affirment les lignes du véhicule et contribuent à une sécurité renforcée : 14 feux LED pouvant s’ajuster automatiquement sur trois positions différentes permettent d’améliorer la visibilité de nuit, notamment sur les routes sinueuse.
+                        </p>
+                    </div>
 
-<div class="personalize__colors">
-<div class="color black" data-id="0"><div class="black inner-color active"></div></div>
-<div class="color grey" data-id="1"><div class="grey inner-color"></div></div>
-<div class="color black_metal" data-id="2"><div class="black_metal inner-color"></div></div>
-<div class="color blue" data-id="3"><div class="blue inner-color"></div></div>
-<div class="color silver" data-id="4"><div class="silver inner-color"></div></div>
-<div class="color white" data-id="5"><div class="white inner-color"></div></div>
-<div class="color red" data-id="6"><div class="red inner-color"></div></div>
-</div>
+                    <div class="screen__content">
+                      <div class="screen__img">>
+                          <!-- <img src="src/img/loading_250.png" alt="Ecran tactile"
+                          srcset='src/img/loading_350.png 465w,
+                          src/img/loading_450.png 650w'
+                          sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px"> -->
+                          <img src="src/img/navigation_250.png" alt="Ecran tactile"
+                          srcset='src/img/navigation_350.png 465w,
+                          src/img/navigation_450.png 650w'
+                          sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px">
+                      </div>
 
-<div class="personalize__cars">
-<img src="src/img/black-noir-uni.png" class="current-car-color" alt="">
-</div>
+                      <div class="screen_pulse start hide"></div>
+                      <div class="screen_pulse navigation active"></div>
+                      <div class="screen_pulse map active"></div>
+                      <div class="screen_pulse control active"></div>
+                      <div class="screen_pulse energie active"></div>
 
-</div> -->
+                    </div>
+
+                </div>
+            </div>
+		</section>
 
 
-        <script src="dist/js/main.min.js"></script>
+        <div class="personalize__popup hide">
+            <a href="#" class="closePopup">X</a>
+
+            <h1>Personaliser votre rêve</h1>
+
+            <div class="colors">
+              <div class="color black" data-id="0"><div class="black inner-color active"></div></div>
+              <div class="color grey" data-id="1"><div class="grey inner-color"></div></div>
+              <div class="color black_metal" data-id="2"><div class="black_metal inner-color"></div></div>
+              <div class="color blue" data-id="3"><div class="blue inner-color"></div></div>
+              <div class="color silver" data-id="4"><div class="silver inner-color"></div></div>
+              <div class="color white" data-id="5"><div class="white inner-color"></div></div>
+              <div class="color red" data-id="6"><div class="red inner-color"></div></div>
+            </div>
+
+            <div class="cars">
+              <div class="currentCar__color">
+                  <img src="src/img/black-noir-uni-300.png" alt="Tesl Model S - black-noir-uni"
+                  srcset='src/img/black-noir-uni-450.png 450w,
+                  src/img/black-noir-uni.png 650w'
+                  sizes="(min-width: 650px) 650px, (min-width: 450px) 450px, 300px">
+              </div>
+            </div>
+
+
+          </div>
+
+
+        <script src="dist/js/script.min.js"></script>
 
     </body>
 

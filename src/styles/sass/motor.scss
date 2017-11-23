@@ -28,7 +28,7 @@
     @include medium {
         width: 50%;
         position: relative;
-        
+
         img {
             width: auto;
             padding: 0;
@@ -39,15 +39,15 @@
         }
     }
 }
-
+//
 .motor__img-end {
     display: none;
-    
+
     @include medium {
         display: block;
         width: 50%;
         position: relative;
-        
+
         img {
             width: auto;
             padding: 0;
@@ -74,14 +74,13 @@
         text-align: center;
         color: $dark-grey;
     }
-    
+
     @include medium {
         width: 50%;
-        
+
         p {
             padding-top: 100px;
             text-align: right;
         }
     }
 }
-

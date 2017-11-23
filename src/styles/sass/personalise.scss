@@ -1,6 +1,10 @@
-.personalize-section {
-  position: relative;
+.personalize__popup {
+  position: fixed;
   padding: $section-padding;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
 
   h1 {
     width: $full-width;
@@ -8,12 +12,19 @@
     color: $black;
   }
 
-  h2 {
-    width: $full-width;
-    text-align: center;
-    padding: $section-padding;
+  .closePopup {
+    float: right;
+    top: 10px;
+    right: 10px;
+    color: #000;
+    font-size: 1.5em;
+    cursor: pointer;
   }
 
+}
+
+.personalize__popup.hide {
+  display: none;
 }
 
 .colors {

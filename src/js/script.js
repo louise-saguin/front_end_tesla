@@ -1,35 +1,83 @@
-const carColor = document.querySelector('.current-car-color')
-const colorsBtn = document.querySelectorAll('.color')
+const screenPulse = document.getElementsByClassName('screen_pulse')
+const screen = document.getElementsByClassName('screen__img')
+const personaliseTesla = document.getElementsByClassName('personaliseTesla')
+const popup = document.getElementsByClassName('personalize__popup')
+const carColor = document.getElementsByClassName('currentCar__color')
+const colorsBtn = document.getElementsByClassName('color')
+const closePopup = document.getElementsByClassName('closePopup')
 const colors = {
-  black: 'src/img/black-noir-uni',
-  grey: 'src/img/mdinight-silver-gris-nuit',
-  black_metal: 'src/img/obsidian-black-noir-obsidien',
-  blue: 'src/img/deep-blue-bleu-outremer',
-  silver: 'src/img/silver-argent',
-  white: 'src/img/white-blanc-uni',
-  red: 'src/img/red-multi-coat-rouge'
+  black: 'black-noir-uni',
+  grey: 'mdinight-silver-gris-nuit',
+  black_metal: 'obsidian-black-noir-obsidien',
+  blue: 'deep-blue-bleu-outremer',
+  silver: 'silver-argent',
+  white: 'white-blanc-uni',
+  red: 'red-multi-coat-rouge'
 }
-console.log(carColor)
+
+let bool = true
+
+// Personalise Tesla
 
 function displayPicture (id, currentElement) {
   const currentActive = document.querySelector('.inner-color.active')
   if (currentActive !== 'null') {
     currentActive.classList.remove('active')
   }
-  // carColor.setAttribute('src', colors[id])
-  carColor.innerHTML = pictureModel(colors[id])
+  carColor[0].innerHTML = pictureModel(colors[id])
   const buttonColor = currentElement.children
   buttonColor[0].classList.add('active')
 }
 
-for (let color of colorsBtn) {
-  color.addEventListener('click', function () {
-    displayPicture(this.classList[1], this)
+function pictureModel (imageSrc) {
+  return '<img src="src/img/' + imageSrc + '-300.png" alt="Tesl Model S - ' + imageSrc + '"' +
+          'srcset="src/img/' + imageSrc + '-450.png 450w,' +
+          'src/img/' + imageSrc + '.png 650w"' +
+          'sizes="(min-width: 650px) 650px, (min-width: 450px) 450px, 300px">'
+}
+
+personaliseTesla[0].addEventListener('click', function (e) {
+  e.preventDefault()
+  popup[0].classList.toggle('hide')
+  if (bool) {
+    for (let i = 0; i < colorsBtn.length; i++) {
+      colorsBtn[i].addEventListener('click', function () {
+        displayPicture(this.classList[1], this)
+      })
+    }
+
+    bool = false
+  }
+})
+
+closePopup[0].addEventListener('click', function (e) {
+  e.preventDefault()
+  popup[0].classList.toggle('hide')
+})
+
+// Tactile Screen
+
+screenPulse[0].addEventListener('click', function () {
+  screen[0].innerHTML = changeScreen('navigation')
+  this.classList.remove('active')
+  this.classList.add('hide')
+
+  for (let i = 1; i < screenPulse.length; i++) {
+    screenPulse[i].addEventListener('click', function () {
+      console.log(this.classList[1])
+    })
+  }
+})
+
+for (let i = 1; i < screenPulse.length; i++) {
+  screenPulse[i].addEventListener('click', function () {
+    console.log(this.classList[1])
   })
 }
 
-function pictureModel (imageSrc) {
-  return '<source media="(min-width: 650px)" srcset="' + imageSrc + '.png">' +
-         '<source media="(min-width: 465px)" srcset="' + imageSrc + '-450.png">' +
-         '<img src="' + imageSrc + '-300.png" alt="">'
+function changeScreen (next) {
+  return '<img src="src/img/' + next + '_250.png" alt="Ecran tactile - ' + next + '"' +
+          'srcset="src/img/' + next + '_350.png 465w,' +
+          'src/img/' + next + '_450.png 650w"' +
+          'sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px">'
 }

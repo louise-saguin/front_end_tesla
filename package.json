@@ -32,6 +32,7 @@
     "postcss-scss": "^1.0.2",
     "postcss-use": "^2.3.0",
     "precss": "^2.0.0",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {

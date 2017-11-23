@@ -1,0 +1,149 @@
+.tactile__screen {
+  background: #131313;
+
+  @include medium {
+    padding: 40px;
+  }
+
+  @include large {
+    padding: 40px;
+  }
+
+  h3 {
+    color: #ffffff;
+  }
+
+  p {
+    color: #bbbbbb;
+  }
+}
+
+.screen__block {
+  @include medium{
+    display: flex;
+    width: 100%;
+    height: 440px;
+  }
+}
+
+.screen__content {
+  position: relative;
+  align-items: center;
+  margin: 0px auto;
+  width: 250px;
+
+  @include medium {
+      width: 350px;
+  }
+
+  @include large {
+      width: 450px;
+  }
+}
+
+.screen__img {
+  display: inline-block;
+  width: 100%;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.screen__text {
+    padding-top: 60px;
+    color: $black;
+}
+
+.screen_pulse {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 100%;
+  animation: out 1s infinite ease-out;
+  background: #eee;
+  cursor: pointer;
+}
+
+.screen_pulse.start {
+  left: 105px;
+  top: 185px;
+  @include medium {
+    left: 160px;
+    top: 290px;
+  }
+
+  @include large {
+    left: 210px;
+    top: 335px;
+  }
+}
+
+.screen_pulse.navigation {
+  left: 105px;
+  top: 65px;
+  @include medium {
+    left: 160px;
+    top: 90px;
+  }
+
+  @include large {
+    left: 250px;
+    top: 105px;
+  }
+}
+
+.screen_pulse.map {
+  left: 125px;
+  top: 125px;
+  @include medium {
+    left: 170px;
+    top: 200px;
+  }
+
+  @include large {
+    left: 210px;
+    top: 260px;
+  }
+}
+
+.screen_pulse.control {
+  left: 170px;
+  top: 190px;
+  @include medium {
+    left: 240px;
+    top: 265px;
+  }
+
+  @include large {
+    left: 320px;
+    top: 355px;
+  }
+}
+
+.screen_pulse.energie {
+  left: 30px;
+  top: 310px;
+  @include medium {
+    left: 50px;
+    top: 440px;
+  }
+
+  @include large {
+    left: 70px;
+    top: 570px;
+  }
+}
+.screen_pulse.active {
+  visibility: visible;
+}
+
+.screen_pulse.hide {
+  visibility: hidden;
+}
+
+@keyframes out {
+  0% {box-shadow: 0px 0px 0px 0px rgba(142, 142, 142, 0.8);}
+  100% {box-shadow: 0px 0px 0px 50px rgba(142, 142, 142, 0);}
+}
