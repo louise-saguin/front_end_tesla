@@ -1,7 +1,14 @@
 // RESPONSIVE
-$smal: 330px;
+$small: 350px;
+$med__small: 450px;
 $medium: 910px;
 $large: 1200px;
+
+@mixin med__small {
+    @media (min-width: #{$med__small}) {
+        @content;
+    }
+}
 
 @mixin medium {
     @media (min-width: #{$medium}) {

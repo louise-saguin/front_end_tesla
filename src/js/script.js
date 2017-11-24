@@ -1,4 +1,5 @@
 const screenPulse = document.getElementsByClassName('screen_pulse')
+const tempScreenExplanations = document.getElementsByClassName('explanation__screen')
 const screen = document.getElementsByClassName('screen__img')
 const personaliseTesla = document.getElementsByClassName('personaliseTesla')
 const popup = document.getElementsByClassName('personalize__popup')
@@ -14,8 +15,29 @@ const colors = {
   white: 'white-blanc-uni',
   red: 'red-multi-coat-rouge'
 }
+const explainationTexts = {
+  navigation: 'navigation',
+  map: 'map',
+  control: 'control',
+  energie: 'energie',
+}
 
+let winWidth = window.innerWidth
 let bool = true
+let currentExplanation = ''
+let screenExplanations = []
+winWidth = window.innerWidth
+//Initialisation screenExplanation
+
+for (let i = 0; i < tempScreenExplanations.length; i++) {
+  screenExplanations[tempScreenExplanations[i].classList[1]] = tempScreenExplanations[i]
+}
+
+window.addEventListener('resize', function () {
+  winWidth = window.innerWidth
+})
+
+console.log(screenExplanations)
 
 // Personalise Tesla
 
@@ -55,7 +77,7 @@ closePopup[0].addEventListener('click', function (e) {
   popup[0].classList.toggle('hide')
 })
 
-// Tactile Screen
+// Tactile Screen !
 
 screenPulse[0].addEventListener('click', function () {
   screen[0].innerHTML = changeScreen('navigation')
@@ -63,16 +85,36 @@ screenPulse[0].addEventListener('click', function () {
   this.classList.add('hide')
 
   for (let i = 1; i < screenPulse.length; i++) {
+    screenPulse[i].classList.add('active')
+    screenPulse[i].classList.remove('hide')
     screenPulse[i].addEventListener('click', function () {
-      console.log(this.classList[1])
+      if (winWidth > 450) {
+        displayBox(this.classList[1])
+        if (this.classList[1] === 'map') {
+          screen[0].innerHTML = changeScreen('map')
+        } else if (this.classList[1] === 'navigation') {
+          screen[0].innerHTML = changeScreen('navigation')
+        }
+      } else { 
+        if (screenExplanations['mobile'].classList.contains('active')) {
+          if (currentExplanation !== this.classList[1]) {
+            screenExplanations['mobile'].children[0].innerHTML = explainationTexts[this.classList[1]]
+            currentExplanation = this.classList[1]
+          } else {
+            screenExplanations['mobile'].classList.remove('active')
+          }
+        } else {
+          screenExplanations['mobile'].classList.add('active')
+          screenExplanations['mobile'].children[0].innerHTML = explainationTexts[this.classList[1]]
+          currentExplanation = this.classList[1]
+        }
+      }
     })
   }
 })
 
-for (let i = 1; i < screenPulse.length; i++) {
-  screenPulse[i].addEventListener('click', function () {
-    console.log(this.classList[1])
-  })
+function displayBox (current) {
+  screenExplanations[current].classList.toggle('active')
 }
 
 function changeScreen (next) {

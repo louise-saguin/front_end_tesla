@@ -1,5 +1,6 @@
 .tactile__screen {
   background: #131313;
+  padding: 20px 0px;
 
   @include medium {
     padding: 40px;
@@ -15,9 +16,10 @@
 
   p {
     color: #bbbbbb;
+    padding-top: 10px;
   }
 }
-
+//
 .screen__block {
   @include medium{
     display: flex;
@@ -56,6 +58,108 @@
     color: $black;
 }
 
+//Explanation content
+
+.explanation__screen {
+  position: absolute;
+  display: none;
+  padding: 5px;
+  background: #131313;
+  color: #fff;
+  width: 150px;
+
+  @include medium {
+    width: 200px;
+  }
+
+  p {
+    font-size: 0.8em;
+    line-height: 1em;
+
+    @include medium {
+      font-size: 1em;
+      line-height: 1.2em;
+    }
+  }
+}
+
+.explanation__screen.active {
+  display: block;
+}
+
+// RIGHT box
+
+.explanation__screen.navigation {
+  @include med__small {
+    top: 30px;
+    right: -145px;
+  }
+
+  @include medium {
+    top: 60px;
+    right: -220px;
+  }
+}
+
+.explanation__screen.control {
+  @include med__small {
+    top: 150px;
+    right: -145px;
+  }
+
+  @include medium {
+    top: 220px;
+    right: -220px;
+  }
+
+  @include large {
+    top: 250px;
+    right: -220px;
+  }
+}
+
+// LEFT box
+
+.explanation__screen.map {
+  @include med__small {
+    top: 105px;
+    left: -130px;
+  }
+
+  @include medium {
+    top: 220px;
+    left: -220px;
+  }
+}
+
+.explanation__screen.energie {
+  @include med__small {
+    top: 280px;
+    left: -130px;
+  }
+
+  @include medium {
+    top: 380px;
+    left: -220px;
+  }
+
+  @include large {
+    top: 450px;
+    left: -220px;
+  }
+}
+
+.explanation__screen.mobile {
+  top: 80px;
+  left: -40px;
+
+  @include med__small {
+    display: none;
+  }
+}
+
+// Pulsor position
+
 .screen_pulse {
   width: 30px;
   height: 30px;
@@ -82,15 +186,15 @@
 
 .screen_pulse.navigation {
   left: 105px;
-  top: 65px;
+  top: 45px;
   @include medium {
     left: 160px;
-    top: 90px;
+    top: 70px;
   }
 
   @include large {
     left: 250px;
-    top: 105px;
+    top: 100px;
   }
 }
 
@@ -99,40 +203,40 @@
   top: 125px;
   @include medium {
     left: 170px;
-    top: 200px;
+    top: 180px;
   }
 
   @include large {
     left: 210px;
-    top: 260px;
+    top: 255px;
   }
 }
 
 .screen_pulse.control {
   left: 170px;
-  top: 190px;
+  top: 180px;
   @include medium {
     left: 240px;
-    top: 265px;
+    top: 255px;
   }
 
   @include large {
     left: 320px;
-    top: 355px;
+    top: 325px;
   }
 }
 
 .screen_pulse.energie {
   left: 30px;
-  top: 310px;
+  top: 300px;
   @include medium {
     left: 50px;
-    top: 440px;
+    top: 430px;
   }
 
   @include large {
     left: 70px;
-    top: 570px;
+    top: 560px;
   }
 }
 .screen_pulse.active {
@@ -145,5 +249,5 @@
 
 @keyframes out {
   0% {box-shadow: 0px 0px 0px 0px rgba(142, 142, 142, 0.8);}
-  100% {box-shadow: 0px 0px 0px 50px rgba(142, 142, 142, 0);}
+  100% {box-shadow: 0px 0px 0px 10px rgba(142, 142, 142, 0);}
 }
