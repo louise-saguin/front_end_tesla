@@ -66,10 +66,18 @@
   padding: 5px;
   background: #131313;
   color: #fff;
-  width: 150px;
+  max-width: 150px;
 
   @include medium {
-    width: 200px;
+    max-width: 200px;
+  }
+
+  h2 {
+    font-size: 1em;
+
+    @include medium {
+      font-size: 1.2em;
+    }
   }
 
   p {
@@ -84,10 +92,19 @@
 }
 
 .explanation__screen.active {
-  display: block;
+  @include med__small {
+    display: block;
+  }
 }
 
-// RIGHT box
+.explanation__screen.mobile.active {
+  display: block;
+  @include med__small {
+    display: none;
+  }
+}
+
+// RIGHT box explanation
 
 .explanation__screen.navigation {
   @include med__small {
@@ -101,10 +118,10 @@
   }
 }
 
-.explanation__screen.control {
+.explanation__screen.energie {
   @include med__small {
     top: 150px;
-    right: -145px;
+    right: -125px;
   }
 
   @include medium {
@@ -123,7 +140,7 @@
 .explanation__screen.map {
   @include med__small {
     top: 105px;
-    left: -130px;
+    left: -150px;
   }
 
   @include medium {
@@ -132,7 +149,7 @@
   }
 }
 
-.explanation__screen.energie {
+.explanation__screen.control {
   @include med__small {
     top: 280px;
     left: -130px;
@@ -212,7 +229,7 @@
   }
 }
 
-.screen_pulse.control {
+.screen_pulse.energie {
   left: 170px;
   top: 180px;
   @include medium {
@@ -226,7 +243,7 @@
   }
 }
 
-.screen_pulse.energie {
+.screen_pulse.control {
   left: 30px;
   top: 300px;
   @include medium {

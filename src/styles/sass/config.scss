@@ -1,8 +1,10 @@
-// RESPONSIVE
+// RESPONSIVE Value 
 $small: 350px;
-$med__small: 450px;
+$med__small: 520px;
 $medium: 910px;
 $large: 1200px;
+
+// Responsive Mixin
 
 @mixin med__small {
     @media (min-width: #{$med__small}) {

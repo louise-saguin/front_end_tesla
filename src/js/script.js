@@ -16,26 +16,21 @@ const colors = {
   red: 'red-multi-coat-rouge'
 }
 const explainationTexts = {
-  navigation: 'navigation',
-  map: 'map',
-  control: 'control',
-  energie: 'energie',
+  navigation: ['Navigation', 'Une navigation intelligente qui s\'adapte aux conditions de circulation en temps réel.'],
+  map: ['Carte', 'Accès aux cartes Google Maps™ simples et intuitives qui vous informent en temps réel sur les conditions de circulation.'],
+  energie: ['Energie', 'Consommation d’énergie en temps réel et estimation de l\'autonomie restante.'],
+  control: ['Contrôles', 'Ajustement de la position de conduite, gestion de la température et de l\'habitacle.']
 }
 
-let winWidth = window.innerWidth
 let bool = true
 let currentExplanation = ''
 let screenExplanations = []
-winWidth = window.innerWidth
+
 //Initialisation screenExplanation
 
 for (let i = 0; i < tempScreenExplanations.length; i++) {
   screenExplanations[tempScreenExplanations[i].classList[1]] = tempScreenExplanations[i]
 }
-
-window.addEventListener('resize', function () {
-  winWidth = window.innerWidth
-})
 
 console.log(screenExplanations)
 
@@ -88,7 +83,7 @@ screenPulse[0].addEventListener('click', function () {
     screenPulse[i].classList.add('active')
     screenPulse[i].classList.remove('hide')
     screenPulse[i].addEventListener('click', function () {
-      if (winWidth > 450) {
+      if (window.innerWidth >= 520) {
         displayBox(this.classList[1])
         if (this.classList[1] === 'map') {
           screen[0].innerHTML = changeScreen('map')
@@ -98,15 +93,13 @@ screenPulse[0].addEventListener('click', function () {
       } else { 
         if (screenExplanations['mobile'].classList.contains('active')) {
           if (currentExplanation !== this.classList[1]) {
-            screenExplanations['mobile'].children[0].innerHTML = explainationTexts[this.classList[1]]
-            currentExplanation = this.classList[1]
+            displayBoxMobile(this.classList[1])
           } else {
             screenExplanations['mobile'].classList.remove('active')
           }
         } else {
           screenExplanations['mobile'].classList.add('active')
-          screenExplanations['mobile'].children[0].innerHTML = explainationTexts[this.classList[1]]
-          currentExplanation = this.classList[1]
+          displayBoxMobile(this.classList[1])
         }
       }
     })
@@ -122,4 +115,15 @@ function changeScreen (next) {
           'srcset="src/img/' + next + '_350.png 465w,' +
           'src/img/' + next + '_450.png 650w"' +
           'sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px">'
+}
+
+function displayBoxMobile (current) {
+  screenExplanations['mobile'].children[0].innerHTML = explainationTexts[current][0]
+  screenExplanations['mobile'].children[1].innerHTML = explainationTexts[current][1]
+  currentExplanation = current
+  if (current === 'map') {
+    screen[0].innerHTML = changeScreen('map')
+  } else if (current === 'navigation') {
+    screen[0].innerHTML = changeScreen('navigation')
+  }
 }
