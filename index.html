@@ -18,15 +18,19 @@
                         <div class="menu__link">
 
                             <a>
-                                <img class="menu__logo--small" src="src/img/mobile-tesla-logo.png">
-                                <img class="menu__logo--large" src="src/img/Tesla_Motors_Logo_large.png">
+                                <img alt="tesla logo" class="menu__logo--small" src="src/img/mobile-tesla-logo.png" alt="">
+                                <img alt="tesla logo" class="menu__logo--large" src="src/img/Tesla_Motors_Logo_large.png" alt="">
                             </a>
                             <a href="#performances">Performances</a>
                             <a href="#autonomie">Autonomie</a>
                             <a href="#security">Sécurité</a>
                             <a href="#motor">Moteur</a>
                             <a href="#tactileScreen">écran tactile</a>
-                            <a href="#" class="personaliseTesla">Personnaliser</a>
+                            <a href="personalise.html">
+                                <div class="button__content">
+                                    <div class="button__animation"></div>
+                                    <div class="button__text">Personnaliser</div>
+                                </div></a>
                         </div>
 
                         <div class="menu__burger">
@@ -37,7 +41,8 @@
             </nav>
 
             <div class="intro">
-                <video autoplay muted loop src="src/img/tesla_modelS_vid.mp4"></video>
+                <video autoplay muted loop src=" src/img/tesla_modelS_vid.mp4" alt="">
+                </video>
                 <div class="container">
                     <h1>Conquérir <br> la model S</h1>
                 </div>
@@ -54,7 +59,7 @@
 
                 <div class="performances__block">
                     <div class="performances__img">
-                        <img src="src/img/Red_Profile.jpg">
+                        <img alt="model S couché de soleil" src="src/img/Red_Bay-1440.jpg" alt="">
                     </div>
 
                     <div class="performances__content">
@@ -88,7 +93,9 @@
                     </div>
 
                     <div class="features__img">
-                        <img src="src/img/features--adaptive-headlights.png" >
+                        <img alt="model S phare adaptatifs" src="src/img/features--adaptive-headlight_large.png"
+                             srcset="src/img/features--adaptive-headlight_small.png 910w,
+                                     src/img/features--adaptive-headlight_medium.png 1200w">
                     </div>
                 </div>
 
@@ -109,7 +116,9 @@
                     </div>
 
                     <div class="features__img">
-                        <img src="src/img/features--hepa-filter.png">
+                        <img alt="model S protection filtre HEPA" src="src/img/features--hepa-filter_large.png"
+                             srcset="src/img/features--hepa-filter_small.png 910w,
+                                     src/img/features--hepa-filter_medium.png 1200w">
                     </div>
                 </div>
             </div>
@@ -129,20 +138,32 @@
             <div class="automation__video">
                 <div class="automation__black"></div>
                 <div class="automation__white"></div>
-                <video autoplay loop src="src/img/pilotage_autonome.mp4"></video>
+                <video autoplay loop src="src/img/pilotage_autonome.mp4" alt=""></video>
             </div>
         </section>
 
         <section class="sensors" id="sensors">
 
             <div class="sensors__img">
-                <img class="sensors__img" src="src/img/camera-ultrasonics.png">
-                <img class="sensors__img" src="src/img/cameras-radar.png">
-                <img class="sensors__img" src="src/img/cameras-rear.png">
-                <img class="sensors__img" src="src/img/camera-side_front.png">
-                <img class="sensors__img" src="src/img/camera-side_rear.png">
-                <img class="sensors__img" src="src/img/camera-triclops.png">
-                <img class="sensors__img" src="src/img/car.png">
+                <img alt="tesla capteurs à ultrasons" class="sensors__img" src="src/img/camera-ultrasonics_large.png"
+                     srcset="src/img/camera-ultrasonics_small.png 910w,
+                             src/img/camera-ultrasonics_medium.png 1200w">
+                <img alt="tesla radar" class="sensors__img" src="src/img/cameras-radar_large.png"
+                     srcset="src/img/cameras-radar_small.png 910w,
+                             src/img/cameras-radar_medium.png 1200w">
+                <img alt="tesla caméras arrière" class="sensors__img" src="src/img/cameras-rear_large.png"
+                     srcset="src/img/cameras-rear_small.png 910w,
+                             src/img/cameras-rear_medium.png 1200w">
+                <img alt="tesla caméras latérales avant " class="sensors__img" src="src/img/camera-side_front_large.png"
+                     srcset="src/img/camera-side_front_small.png 910w,
+                             src/img/camera-side_front_medium.png 1200w">
+                <img alt="tesla caméras latérales arrière" class="sensors__img" src="src/img/camera-side_rear_large.png"
+                     srcset="src/img/camera-side_rear_small.png 910w,
+                             src/img/camera-side_rear_medium.png 1200w">
+                <img alt="tesla caméra principale" class="sensors__img" src="src/img/camera-triclops_large.png"
+                     srcset="src/img/camera-triclops_small.png 910w,
+                             src/img/camera-triclops_medium.png 1200w">
+                <img alt="model S équipé de capteur" class="sensors__img" src="src/img/car.png">
             </div>
 
             <div class="container">
@@ -177,20 +198,21 @@
         </section>
 
         <section class="security" id="security">
-            <div class="container">
-
-                <div class="security__block">
-                    <div class="security__content">
-                        <h2 class="security__title">Security</h2>
-                        <p class="security__text">
-                            La Model S a été conçue à partir d’une feuille blanche pour être le véhicule le plus sûr en circulation. L'agencement du groupe motopropulseur, situé sous l'habitacle en aluminium, permet d'abaisser le centre de gravité du véhicule, ce qui améliore la tenue de route et réduit le risque de retournement. L'absence d'un moteur à combustion à l'avant laisse place à un espace volumineux absorbant les impacts en cas de choc frontal.
-                        </p>
-                    </div>
-
-                    <img src="src/img/tesla_security.png">
-                    <img src="src/img/tesla_security_rotate.png">
+            <div class="security__block">
+                <div class="security__content">
+                    <h2 class="security__title">Security</h2>
+                    <p class="security__text">
+                        La Model S a été conçue à partir d’une feuille blanche pour être le véhicule le plus sûr en circulation. L'agencement du groupe motopropulseur, situé sous l'habitacle en aluminium, permet d'abaisser le centre de gravité du véhicule, ce qui améliore la tenue de route et réduit le risque de retournement. L'absence d'un moteur à combustion à l'avant laisse place à un espace volumineux absorbant les impacts en cas de choc frontal.
+                    </p>
                 </div>
-
+                <div class="security__img">
+                    <img alt="Model S gris métallisé" src="src/img/tesla_security_large.png"
+                         srcset="src/img/tesla_security_medium.png 910w,
+                                 src/img/tesla_security_large.png 1200w">
+                    <img alt="Model S gris métallisé" src="src/img/tesla_security2_large.png"
+                         srcset="src/img/tesla_security2_medium.png 910w,
+                                 src/img/tesla_security2_large.png 1200w">
+                </div>
             </div>
         </section>
 
@@ -201,7 +223,10 @@
 
                 <div class="motor__block">
                     <div class="motor__img">
-                        <img src="src/img/tesla_motor.jpg">
+                        <div class="motor__pulse"></div>
+                        <img alt="tesla model S moteur avant" src="src/img/tesla_motor_large.jpg"
+                             srcset="src/img/tesla_motor_small.jpg 910w,
+                                     src/img/tesla_motor_medium.jpg 1200w">
                     </div>
 
                     <div class="motor__text">
@@ -216,10 +241,12 @@
                     </div>
 
                     <div class="motor__img-end">
-                        <img src="src/img/tesla_motor.jpg">
+                        <div class="motor__pulse-end"></div>
+                        <img alt="tesla model S moteur arrière" src="src/img/tesla_motor_large.jpg"
+                             srcset="src/img/tesla_motor_small.jpg 910w,
+                                     src/img/tesla_motor_medium.jpg 1200w">
                     </div>
                 </div>
-
             </div>
         </section>
 

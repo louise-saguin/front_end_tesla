@@ -5,36 +5,18 @@
     background-color: $black;
 
     @include medium {
-        padding: 0;
+        padding: 100px 0px;
+    }
+
+    @include large {
+       padding: 100px 0px;
     }
 }
 
 .security__block {
 
-    img {
-        display: none;
-    }
-
     @include medium {
-        position: relative;
-
-        img {
-            display: block;
-            position: absolute;
-
-            &:nth-child(2) {
-                top: -10%;
-                right: -10%;
-                max-height: 730px;
-            }
-
-            &:nth-child(3) {          
-                top: 80%;
-                right: -10%;
-                max-height: 430px;
-            }
-        }
-
+        display: flex;
     }
 }
 
@@ -42,7 +24,55 @@
 
     @include medium {
         width: 50%;
-        padding-left: 40px;
+        padding: 0px 20px 0px 80px;
+    }
+
+    @include large {
+        padding-left: 100px;
+    }  
+}
+
+.security__img {
+
+    display: none;
+
+    @include medium {
+        display: block;
+        position: relative;
+        width: 50%;
+
+        img {
+            position: absolute;
+
+            &:nth-child(1) {
+                bottom:20%;
+                right: 0%;
+                width: 100%;
+                max-width: 500px;
+            }
+
+            &:nth-child(2) {          
+                top: 70%;
+                right: 0%;
+                width: 130%;
+                max-width: 750px;
+            }
+        }
+    }
+
+    @include large {
+
+        img {
+            &:nth-child(1) {
+                bottom:-10%;
+                max-width: 659px;
+            }
+
+            &:nth-child(2) {          
+                top: 80%;
+                max-width: 994px;
+            }
+        }
     }
 }
 
@@ -52,22 +82,22 @@
     color: $white;
 
     @include medium {
-        padding: 100px 0px 40px 0px;
+        padding: 100px 40px 40px 40px;
         text-align: left;
     }  
 
-    @include medium {
-        padding: 100px 0px 40px 0px;
-    }
 }
 
 .security__text{
     text-align: center;
     color: $white;
+    padding: 0px 40px;
 
     @include medium {
         padding-bottom: 200px;
         text-align: left;
     }  
 }
+
+
 

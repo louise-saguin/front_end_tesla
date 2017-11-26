@@ -50,6 +50,13 @@
             @include centerX;
         }
     }
+    
+    @include large {
+        
+        video {
+            max-width: 1500px;
+        }
+    }
 }
 
 .automation__black {

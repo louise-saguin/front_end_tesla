@@ -1,6 +1,10 @@
+
 // RESPONSIVE Value 
-$small: 350px;
-$med__small: 520px;
+//$small: 350px;
+//$med__small: 520px;
+
+// RESPONSIVE
+$small: 330px;
 $medium: 910px;
 $large: 1200px;
 
@@ -140,6 +144,11 @@ h1 {
     @include medium {
         font-size: 50px;
         line-height: 51px;
+    }
+
+    @include large {
+        font-size: 75px;
+        line-height: 76px;
     }
 }
 
