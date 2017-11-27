@@ -1,0 +1,349 @@
+.tactile__screen {
+    background: #131313;
+    padding: 20px 0px;
+    @include medium {
+        padding: 40px;
+    }
+    @include large {
+        padding: 40px;
+    }
+    h3 {
+        color: #ffffff;
+    }
+    p {
+        color: #bbbbbb;
+        padding-top: 10px;
+    }
+}
+
+//
+.screen__block {
+    @include medium {
+        display: flex;
+        width: 100%;
+        height: 440px;
+    }
+}
+
+.screen__content {
+    position: relative;
+    align-items: center;
+    margin: 0px auto;
+    width: 250px;
+    @include medium {
+        width: 350px;
+    }
+    @include large {
+        width: 450px;
+    }
+}
+
+.screen__img {
+    display: inline-block;
+    width: 100%;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.screen__text {
+    padding-top: 60px;
+    color: $black;
+}
+
+//Explanation content
+.explanation__screen {
+    position: absolute;
+    display: none;
+    padding: 5px;
+    background: #131313;
+    color: #fff;
+    max-width: 150px;
+    @include medium {
+        max-width: 200px;
+    }
+    h2 {
+        font-size: 1em;
+        @include medium {
+            font-size: 1.2em;
+        }
+    }
+    p {
+        font-size: 0.8em;
+        line-height: 1em;
+        @include medium {
+            font-size: 1em;
+            line-height: 1.2em;
+        }
+    }
+}
+
+.explanation__screen.active {
+    @include med__small {
+        display: block;
+    }
+}
+
+.explanation__screen.mobile.active {
+    display: block;
+    @include med__small {
+        display: none;
+    }
+}
+
+// RIGHT box explanation
+.explanation__screen.navigation {
+    @include med__small {
+        top: 30px;
+        right: -145px;
+    }
+    @include medium {
+        top: 60px;
+        right: -220px;
+    }
+}
+
+.explanation__screen.energie {
+    @include med__small {
+        top: 140px;
+        right: -125px;
+    }
+    @include medium {
+        top: 220px;
+        right: -220px;
+    }
+    @include large {
+        top: 290px;
+        right: -220px;
+    }
+}
+
+// LEFT box
+.explanation__screen.map {
+    @include med__small {
+        top: 105px;
+        left: -150px;
+    }
+    @include medium {
+        top: 160px;
+        left: -220px;
+    }
+    @include large {
+        top: 180px;
+        right: -220px;
+    }
+}
+
+.explanation__screen.control {
+    @include med__small {
+        top: 280px;
+        left: -130px;
+    }
+    @include medium {
+        top: 380px;
+        left: -220px;
+    }
+    @include large {
+        top: 490px;
+        left: -220px;
+    }
+}
+
+.explanation__screen.mobile {
+    top: 80px;
+    left: -40px;
+    @include med__small {
+        display: none;
+    }
+}
+
+// Pulsor position
+.screen_pulse {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 100%;
+    animation: out 1s infinite ease-out;
+    background: #eee;
+    cursor: pointer;
+}
+
+.screen_pulse.start {
+    left: 115px;
+    top: 195px;
+    @include medium {
+        left: 160px;
+        top: 290px;
+    }
+    @include large {
+        left: 215px;
+        top: 380px;
+    }
+}
+
+.screen_pulse.navigation {
+    left: 125px;
+    top: 75px;
+    @include medium {
+        left: 185px;
+        top: 110px;
+    }
+    @include large {
+        left: 250px;
+        top: 155px;
+    }
+}
+
+.screen_pulse.map {
+    left: 125px;
+    top: 145px;
+    @include medium {
+        left: 170px;
+        top: 200px;
+    }
+    @include large {
+        left: 210px;
+        top: 290px;
+    }
+}
+
+.screen_pulse.energie {
+    left: 175px;
+    top: 195px;
+    @include medium {
+        left: 250px;
+        top: 285px;
+    }
+    @include large {
+        left: 330px;
+        top: 380px;
+    }
+}
+
+//
+.screen_pulse.control {
+    left: 30px;
+    top: 335px;
+    @include medium {
+        left: 50px;
+        top: 480px;
+    }
+    @include large {
+        left: 70px;
+        top: 620px;
+    }
+}
+
+.screen_pulse.active {
+    visibility: visible;
+}
+
+.screen_pulse.hide {
+    visibility: hidden;
+}
+
+@keyframes out {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgba(142, 142, 142, 0.8);
+    }
+    100% {
+        box-shadow: 0px 0px 0px 10px rgba(142, 142, 142, 0);
+    }
+}
+
+// screen stick
+.screen__scroll {
+    position: relative;
+}
+
+.screen__circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid $white;
+    width: 12px;
+    height: 12px;
+    transform: translateX(-50%);
+    transform-origin: center center;
+}
+
+.screen__line {
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    border-left: 2px solid $white;
+    transform: translateY(12px);
+    transform-origin: top center;
+}
+
+.stick__navigation {
+    @include med__small {
+        transform: rotateZ(-90deg) translateX(100%) translateY(-190px);
+    }
+    @include medium {
+        transform: rotateZ(-90deg) translateX(calc(100% - 15px)) translateY(-275px);
+    }
+    @include large {
+        transform: rotateZ(-90deg) translateX(calc(100% - 60px)) translateY(-315px);
+    }
+}
+
+.stick__map {
+    @include med__small {
+        transform: rotateZ(90deg) translateX(-15px) translateY(-215px);
+    }
+    @include medium {
+        transform: rotateZ(90deg) translateX(-30px) translateY(-305px);
+    }
+    @include large {
+        transform: rotateZ(90deg) translateX(40px) translateY(-345px);
+    }
+    .screen__line {
+        height: 120px;
+        @include medium {
+            height: 150px;
+        }
+    }
+}
+
+.stick__energie {
+    @include med__small {
+        transform: rotateZ(-90deg) translateX(calc(100% - 20px)) translateY(-120px);
+    }
+    @include medium {
+        transform: rotateZ(-90deg) translateX(calc(100% - 30px)) translateY(-215px);
+    }
+    @include large {
+        transform: rotateZ(-90deg) translateX(calc(100% - 55px)) translateY(-235px);
+    }
+    .screen__line {
+        height: 30px;
+        @include medium {
+            height: 80px;
+        }
+        @include large {
+            height: 100px;
+        }
+    }
+}
+
+.stick__control {
+    @include med__small {
+        transform: rotateZ(90deg) translateX(10px) translateY(-105px);
+    }
+    @include medium {
+        transform: rotateZ(90deg) translateX(65px) translateY(-185px);
+    }
+    @include large {
+        transform: rotateZ(90deg) translateX(95px) translateY(-205px);
+    }
+    .screen__line {
+        height: 30px;
+        @include medium {
+            height: 70px;
+        }
+        @include large {
+            height: 90px;
+        }
+    }
+}

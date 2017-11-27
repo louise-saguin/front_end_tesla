@@ -1,7 +1,6 @@
 //@import "config.scss";
 
 .features {
-    padding-bottom: 100px;
 
     @include medium {
         padding-top: 190px;
@@ -18,9 +17,9 @@
         &:first-child {
             flex-direction: row-reverse;
         }
-        
+
         &:last-child {
-             padding-left: 100px;
+            padding-left: 100px;
         }
     }
 }
@@ -28,36 +27,90 @@
 .features__content {
 
     @include medium {
-        width: 55%;
+        width: 57%;
+        position: relative;
     }
 }
 
 .features__img {
-
+    text-align: center;
+    padding: 30px 0px;
+    
     img {
-        width: 100%;
+        transform: rotate(180deg);
+        min-width: 220px;
+        max-width: 320px;
     }
 
     @include medium {
         display: flex;
-        width: 45%;
+        width: 43%;
 
         img {
             padding-right: 55px;
-            min-width:250px;
-            max-width:380px;
-            height: auto;
-            align-self:flex-start;
+            align-self: flex-start;
             transform: rotate(-90deg);
         }
     }
+
+    @include large {
+
+        img {
+            max-width: 450px;
+        }
+    }
+}
+
+.features__title {
+    padding-top: 70px;
+
+    @include medium {
+        position: relative;
+    }
+}
+
+.features__bar-one, .features__bar-two {
+    display: none;
+    height : 5px;
+    position: absolute;
+
+    @include medium{
+        display: block;
+    }
+}
+
+.features__bar-one {
+    transform: rotate(180deg) translateX(-50%);
+    left: -7%;
+    top: 50%;
+
+}
+
+.features__bar-two {
+    @include centerY;
+    right: -7%;
+}
+
+.features__line {
+    width: 100px;
+    height: 1px;
+    background-color: #8d8d8d;
+    @include centerY;
+    margin-left: 5px;
+}
+
+.features__circle {
+    border-radius: 50%;
+    border: 1px solid #8d8d8d;
+    width: 5px;
+    height: 5px;
+    @include centerY;
 }
 
 .features__text {
     padding-top: 60px;
     color: $black;
 }
-
 
 
 

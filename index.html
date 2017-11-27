@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
         <title>Tesla model S</title>
-        <link rel="stylesheet" href="dist/styles/main.css">
+        <link rel="stylesheet" href="dist/styles/main.min.css">
     </head>
 
     <body>
@@ -17,16 +17,20 @@
 
                         <div class="menu__link">
 
-
-                            <a><img class="menu__logo--small" src="src/img/mobile-tesla-logo.png">
-                                <img class="menu__logo--large" src="src/img/Tesla_Motors_Logo_large.png">
+                            <a>
+                                <img alt="tesla logo" class="menu__logo--small" src="src/img/mobile-tesla-logo.png" alt="">
+                                <img alt="tesla logo" class="menu__logo--large" src="src/img/Tesla_Motors_Logo_large.png" alt="">
                             </a>
-                            <a>Performances</a>
-                            <a>Autonomie</a>
-                            <a>Sécurité</a>
-                            <a>Moteur</a>
-                            <a>écran tactile</a>
-                            <a>Personnaliser</a>
+                            <a href="#performances">Performances</a>
+                            <a href="#autonomie">Autonomie</a>
+                            <a href="#security">Sécurité</a>
+                            <a href="#motor">Moteur</a>
+                            <a href="#tactileScreen">écran tactile</a>
+                            <a href="personalise.html" class="personaliseTesla">
+                                <div class="button__content">
+                                    <div class="button__animation"></div>
+                                    <div class="button__text">Personnaliser</div>
+                                </div></a>
                         </div>
 
                         <div class="menu__burger">
@@ -37,14 +41,15 @@
             </nav>
 
             <div class="intro">
-                <video autoplay muted loop src="src/img/tesla_modelS_vid.mp4"></video>
+                <video autoplay muted loop src=" src/img/tesla_modelS_vid.mp4" alt="">
+                </video>
                 <div class="container">
                     <h1>Conquérir <br> la model S</h1>
                 </div>
             </div>
         </header>
 
-        <section class="performances">
+        <section class="performances" id="performances">
             <div class="container">
 
                 <div class="performances__scroll">
@@ -54,7 +59,7 @@
 
                 <div class="performances__block">
                     <div class="performances__img">
-                        <img src="src/img/Red_Bay-1440.jpg">
+                        <img alt="model S couché de soleil" src="src/img/Red_Bay-1440.jpg" alt="">
                     </div>
 
                     <div class="performances__content">
@@ -69,115 +74,159 @@
             </div>
         </section>
 
-        <section class="features">
+        <section class="features" id="features">
             <div class="container">
 
                 <div class="features__block">
                     <div class="features__content">
-                        <h3 class="features__title">Phares adaptatifs</h3>
+                        <h3 class="features__title">
+                            Phares adaptatifs
+
+                            <div class="features__bar-one">
+                                <div class="features__circle"></div>
+                                <div class="features__line"></div>
+                            </div>
+                        </h3>
                         <p class="features__text">
                             La Model S est équipée de phares Full LED adaptatifs. Ils affirment les lignes du véhicule et contribuent à une sécurité renforcée : 14 feux LED pouvant s’ajuster automatiquement sur trois positions différentes permettent d’améliorer la visibilité de nuit, notamment sur les routes sinueuse.
                         </p>
                     </div>
 
                     <div class="features__img">
-                        <img src="src/img/features--adaptive-headlights.png" >
+                        <img alt="model S phare adaptatifs" src="src/img/features--adaptive-headlight_large.png"
+                             srcset="src/img/features--adaptive-headlight_small.png 910w,
+                                     src/img/features--adaptive-headlight_medium.png 1200w">
                     </div>
                 </div>
 
                 <div class="features__block">
                     <div class="features__content">
-                        <h3 class="features__title">Système de défense contre les armes biologiques</h3>
+                        <h3 class="features__title">
+                            Système de défense contre les armes biologiques
+
+                            <div class="features__bar-two">
+                                <div class="features__line"></div>
+                                <div class="features__circle"></div>
+
+                            </div>
+                        </h3>
                         <p class="features__text">
                             Un filtre HEPA de qualité médicale purifie l'air extérieur en éliminant 99,97% des pollens, bactéries, virus et polluants. Trois modes sont disponibles : circulation avec air extérieur, re-circulation de l'air intérieur ou mode de défense contre les armes biologiques, qui crée une pression positive empêchant l'air extérieur de pénétrer dans l'habitacle.
                         </p>
                     </div>
 
                     <div class="features__img">
-                        <img src="src/img/features--hepa-filter.png">
+                        <img alt="model S protection filtre HEPA" src="src/img/features--hepa-filter_large.png"
+                             srcset="src/img/features--hepa-filter_small.png 910w,
+                                     src/img/features--hepa-filter_medium.png 1200w">
                     </div>
                 </div>
             </div>
 
         </section>
 
-        <section class="automation">
-            <div class="container">
-
-                <h2 class="automation__title">Conduite automatique</h2>
-                <p class="automation__text">
-                    Tous les véhicules Tesla produits dans notre usine, y compris la Model 3, bénéficient des équipements nécessaires à la conduite autonome, offrant un niveau de sécurité largement supérieur à un conducteur humain.
-                </p>
+        <section class="automation" id="autonomie">
+            <div class="automation__content">
+                <div class="container">
+                    <h2 class="automation__title">Conduite automatique</h2>
+                    <p class="automation__text">
+                        Tous les véhicules Tesla produits dans notre usine, y compris la Model 3, bénéficient des équipements nécessaires à la conduite autonome, offrant un niveau de sécurité largement supérieur à un conducteur humain.
+                    </p>
+                </div>
             </div>
 
             <div class="automation__video">
-                <video autoplay loop src="src/img/pilotage_autonome.mp4"></video>
+                <div class="automation__black"></div>
+                <div class="automation__white"></div>
+                <video autoplay loop src="src/img/pilotage_autonome.mp4" alt=""></video>
             </div>
         </section>
 
-        <section class="sensors">
-            <div class="container">
-                <img class="sensors__img" src="src/img/cameras-ultrasonics.png">
-                
-                
+        <section class="sensors" id="sensors">
 
+            <div class="sensors__img">
+                <img alt="tesla capteurs à ultrasons" class="sensors__img" src="src/img/camera-ultrasonics_large.png"
+                     srcset="src/img/camera-ultrasonics_small.png 910w,
+                             src/img/camera-ultrasonics_medium.png 1200w">
+                <img alt="tesla radar" class="sensors__img" src="src/img/cameras-radar_large.png"
+                     srcset="src/img/cameras-radar_small.png 910w,
+                             src/img/cameras-radar_medium.png 1200w">
+                <img alt="tesla caméras arrière" class="sensors__img" src="src/img/cameras-rear_large.png"
+                     srcset="src/img/cameras-rear_small.png 910w,
+                             src/img/cameras-rear_medium.png 1200w">
+                <img alt="tesla caméras latérales avant " class="sensors__img" src="src/img/camera-side_front_large.png"
+                     srcset="src/img/camera-side_front_small.png 910w,
+                             src/img/camera-side_front_medium.png 1200w">
+                <img alt="tesla caméras latérales arrière" class="sensors__img" src="src/img/camera-side_rear_large.png"
+                     srcset="src/img/camera-side_rear_small.png 910w,
+                             src/img/camera-side_rear_medium.png 1200w">
+                <img alt="tesla caméra principale" class="sensors__img" src="src/img/camera-triclops_large.png"
+                     srcset="src/img/camera-triclops_small.png 910w,
+                             src/img/camera-triclops_medium.png 1200w">
+                <img alt="model S équipé de capteur" class="sensors__img" src="src/img/car.png">
+            </div>
+
+            <div class="container">
                 <div class="sensors__block">
                     <div class="sensors__legend">
-                        <p>Capteurs ultrasoniques</p>
-                        <input type="chexbox">
-                    </div>
-
-                    <div class="sensors__legend">
-                        <p>Caméras arrière</p>
-                        <input type="chexbox">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">Capteurs ultrasoniques</label>
                     </div>
                     <div class="sensors__legend">
-                        <p>Caméras latérales orientées vers l'avant</p>
-                        <input type="chexbox">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">Caméras arrière</label>
                     </div>
                     <div class="sensors__legend">
-                        <p>Caméras avant, grand angle et longue distance</p>
-                        <input type="chexbox">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Caméras latérales orientées vers l'avant</label>
                     </div>
                     <div class="sensors__legend">
-                        <p>Caméras latérales orientées vers l'arrière</p>
-                        <input type="chexbox">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">Caméras avant, grand angle et longue distance</label>
                     </div>
                     <div class="sensors__legend">
-                        <p>Radar</p>
-                        <input type="chexbox">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">Caméras latérales orientées vers l'arrière</label>
                     </div>
-                </div>
-                
-            </div>
-        </section>
-
-        <section class="security">
-            <div class="container">
-
-                <div class="security__block">
-                    <div class="security__content">
-                        <h2 class="security__title">Security</h2>
-                        <p class="security__text">
-                            La Model S a été conçue à partir d’une feuille blanche pour être le véhicule le plus sûr en circulation. L'agencement du groupe motopropulseur, situé sous l'habitacle en aluminium, permet d'abaisser le centre de gravité du véhicule, ce qui améliore la tenue de route et réduit le risque de retournement. L'absence d'un moteur à combustion à l'avant laisse place à un espace volumineux absorbant les impacts en cas de choc frontal.
-                        </p>
+                    <div class="sensors__legend">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">Radar</label>
                     </div>
-
-                    <img src="src/img/tesla_security.png">
-                    <img src="src/img/tesla_security_rotate.png">
                 </div>
 
             </div>
         </section>
 
-        <section class="motor">
+        <section class="security" id="security">
+            <div class="security__block">
+                <div class="security__content">
+                    <h2 class="security__title">Security</h2>
+                    <p class="security__text">
+                        La Model S a été conçue à partir d’une feuille blanche pour être le véhicule le plus sûr en circulation. L'agencement du groupe motopropulseur, situé sous l'habitacle en aluminium, permet d'abaisser le centre de gravité du véhicule, ce qui améliore la tenue de route et réduit le risque de retournement. L'absence d'un moteur à combustion à l'avant laisse place à un espace volumineux absorbant les impacts en cas de choc frontal.
+                    </p>
+                </div>
+                <div class="security__img">
+                    <img alt="Model S gris métallisé" src="src/img/tesla_security_large.png"
+                         srcset="src/img/tesla_security_medium.png 910w,
+                                 src/img/tesla_security_large.png 1200w">
+                    <img alt="Model S gris métallisé" src="src/img/tesla_security2_large.png"
+                         srcset="src/img/tesla_security2_medium.png 910w,
+                                 src/img/tesla_security2_large.png 1200w">
+                </div>
+            </div>
+        </section>
+
+        <section class="motor" id="motor">
             <div class="container">
 
                 <h2 class="motor__title">Moteur électrique</h2>
 
                 <div class="motor__block">
                     <div class="motor__img">
-                        <img src="src/img/tesla_motor.jpg">
+                        <div class="motor__pulse"></div>
+                        <img alt="tesla model S moteur avant" src="src/img/tesla_motor_large.jpg"
+                             srcset="src/img/tesla_motor_small.jpg 910w,
+                                     src/img/tesla_motor_medium.jpg 1200w">
                     </div>
 
                     <div class="motor__text">
@@ -192,15 +241,117 @@
                     </div>
 
                     <div class="motor__img-end">
-                        <img src="src/img/tesla_motor.jpg">
+                        <div class="motor__pulse-end"></div>
+                        <img alt="tesla model S moteur arrière" src="src/img/tesla_motor_large.jpg"
+                             srcset="src/img/tesla_motor_small.jpg 910w,
+                                     src/img/tesla_motor_medium.jpg 1200w">
                     </div>
                 </div>
-
             </div>
         </section>
 
+        <section class="tactile__screen" id="tactileScreen">
+            <div class="container">
 
-        <script src="dist/js/script.js"></script>
+                <div class="tactile__screen__block">
+                    <div class="tactile__screen__content">
+                        <h3 class="tactile__screen__title">Phares adaptatifs</h3>
+                        <p class="tactile__screen__text">
+                            La Model S est équipée de phares Full LED adaptatifs. Ils affirment les lignes du véhicule et contribuent à une sécurité renforcée : 14 feux LED pouvant s’ajuster automatiquement sur trois positions différentes permettent d’améliorer la visibilité de nuit, notamment sur les routes sinueuse.
+                        </p>
+                    </div>
+
+                    <div class="screen__content">
+                      <div class="screen__img">
+                          <img src="src/img/loading_250.png" alt="Ecran tactile"
+                          srcset='src/img/loading_350.png 465w,
+                          src/img/loading_450.png 650w'
+                          sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px">
+                      </div>
+                      
+                    <!-- Pulsor -->
+
+                      <div class="screen_pulse start active"></div>
+                      <div class="screen_pulse navigation hide"></div>
+                      <div class="screen_pulse map hide"></div>
+                      <div class="screen_pulse energie hide"></div>
+                      <div class="screen_pulse control hide"></div>
+
+                    <!-- Text explanation -->
+
+                      <div class="explanation__screen navigation">
+                        <h2>Navigation</h2>
+                        <p>Une navigation intelligente qui s'adapte aux conditions de circulation en temps réel.</p>
+                        <div class="screen__scroll stick__navigation">
+                            <div class="screen__circle"></div>
+                            <div class="screen__line"></div>
+                        </div>
+                    </div>
+                      <div class="explanation__screen map">
+                        <h2>Carte</h2>
+                        <p>Accès aux cartes Google Maps™ simples et intuitives qui vous informent en temps réel sur les conditions de circulation.</p>
+                        <div class="screen__scroll stick__map">
+                            <div class="screen__circle"></div>
+                            <div class="screen__line"></div>
+                        </div>
+                    </div>
+                      <div class="explanation__screen energie">
+                        <h2>Energie</h2>
+                        <p>Consommation d’énergie en temps réel et estimation de l'autonomie restante.</p>
+                        <div class="screen__scroll stick__energie">
+                            <div class="screen__circle"></div>
+                            <div class="screen__line"></div>
+                        </div>
+                    </div>
+                      <div class="explanation__screen control">
+                        <h2>Contrôles</h2>
+                        <p>Ajustement de la position de conduite, gestion de la température et de l'habitacle.</p>
+                        <div class="screen__scroll stick__control">
+                            <div class="screen__circle"></div>
+                            <div class="screen__line"></div>
+                        </div>
+                    </div>
+                      <div class="explanation__screen mobile">
+                        <h2></h2>
+                        <p></p>
+                      </div>
+
+                    </div>
+
+                </div>
+            </div>
+		</section>
+
+
+        <div class="personalize__popup hide">
+            <a href="#" class="closePopup">X</a>
+
+            <h1>Personaliser votre rêve</h1>
+
+            <div class="colors">
+              <div class="color black" data-id="0"><div class="black inner-color active"></div></div>
+              <div class="color grey" data-id="1"><div class="grey inner-color"></div></div>
+              <div class="color black_metal" data-id="2"><div class="black_metal inner-color"></div></div>
+              <div class="color blue" data-id="3"><div class="blue inner-color"></div></div>
+              <div class="color silver" data-id="4"><div class="silver inner-color"></div></div>
+              <div class="color white" data-id="5"><div class="white inner-color"></div></div>
+              <div class="color red" data-id="6"><div class="red inner-color"></div></div>
+            </div>
+
+            <div class="cars">
+              <div class="currentCar__color">
+                  <img src="src/img/black-noir-uni-300.png" alt="Tesl Model S - black-noir-uni"
+                  srcset='src/img/black-noir-uni-450.png 450w,
+                  src/img/black-noir-uni.png 650w'
+                  sizes="(min-width: 650px) 650px, (min-width: 450px) 450px, 300px">
+              </div>
+            </div>
+
+
+          </div>
+
+
+        <script src="dist/js/script.min.js"></script>
 
     </body>
 
