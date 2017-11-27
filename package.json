@@ -1,7 +1,7 @@
 {
   "name": "templatepartiel",
   "version": "1.0.0",
-  "description": "get and init canvas\r var canvas  = document.querySelector( 'canvas' ),\r     context = canvas.getContext( '2d' );",
+  "description": "hetic-p2020-08 - Projet d'étude front end : site vitrine",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

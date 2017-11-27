@@ -32,7 +32,7 @@ for (let i = 0; i < tempScreenExplanations.length; i++) {
   screenExplanations[tempScreenExplanations[i].classList[1]] = tempScreenExplanations[i]
 }
 
-console.log(screenExplanations)
+console.log(personaliseTesla[0])
 
 // Personalise Tesla
 

@@ -26,7 +26,7 @@
                             <a href="#security">Sécurité</a>
                             <a href="#motor">Moteur</a>
                             <a href="#tactileScreen">écran tactile</a>
-                            <a href="personalise.html">
+                            <a href="personalise.html" class="personaliseTesla">
                                 <div class="button__content">
                                     <div class="button__animation"></div>
                                     <div class="button__text">Personnaliser</div>
@@ -268,6 +268,8 @@
                           src/img/loading_450.png 650w'
                           sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px">
                       </div>
+                      
+                    <!-- Pulsor -->
 
                       <div class="screen_pulse start active"></div>
                       <div class="screen_pulse navigation hide"></div>
@@ -275,22 +277,40 @@
                       <div class="screen_pulse energie hide"></div>
                       <div class="screen_pulse control hide"></div>
 
+                    <!-- Text explanation -->
+
                       <div class="explanation__screen navigation">
                         <h2>Navigation</h2>
                         <p>Une navigation intelligente qui s'adapte aux conditions de circulation en temps réel.</p>
-                      </div>
+                        <div class="screen__scroll stick__navigation">
+                            <div class="screen__circle"></div>
+                            <div class="screen__line"></div>
+                        </div>
+                    </div>
                       <div class="explanation__screen map">
                         <h2>Carte</h2>
                         <p>Accès aux cartes Google Maps™ simples et intuitives qui vous informent en temps réel sur les conditions de circulation.</p>
-                      </div>
+                        <div class="screen__scroll stick__map">
+                            <div class="screen__circle"></div>
+                            <div class="screen__line"></div>
+                        </div>
+                    </div>
                       <div class="explanation__screen energie">
-                        <h2>control</h2>
+                        <h2>Energie</h2>
                         <p>Consommation d’énergie en temps réel et estimation de l'autonomie restante.</p>
-                      </div>
+                        <div class="screen__scroll stick__energie">
+                            <div class="screen__circle"></div>
+                            <div class="screen__line"></div>
+                        </div>
+                    </div>
                       <div class="explanation__screen control">
                         <h2>Contrôles</h2>
                         <p>Ajustement de la position de conduite, gestion de la température et de l'habitacle.</p>
-                      </div>
+                        <div class="screen__scroll stick__control">
+                            <div class="screen__circle"></div>
+                            <div class="screen__line"></div>
+                        </div>
+                    </div>
                       <div class="explanation__screen mobile">
                         <h2></h2>
                         <p></p>
