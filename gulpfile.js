@@ -48,10 +48,7 @@ gulp.task('js', function () {
   .pipe(gulpif(!isProd, sourcemaps.init({loadMaps: true})))
   .pipe(uglify())
   .pipe(gulpif(!isProd, sourcemaps.write('.')))
-<<<<<<< HEAD
-=======
   .pipe(rename('script.min.js'))
->>>>>>> dev
   .pipe(gulp.dest('dist/js'))
   .pipe(sync.stream())
 })
