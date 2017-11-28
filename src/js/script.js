@@ -143,6 +143,8 @@ for (let i = 0; i < cameraSelect.length; i++) {
   })
 }
 
+// Listen scroll to change background menu
+
 window.addEventListener('scroll', function changeBackground () {
   if (this.scrollY > allSection[6].offsetTop) {
     fixeMenu.style.background = backgroundMenuNone
@@ -168,11 +170,4 @@ window.addEventListener('scroll', function changeBackground () {
   else {
     fixeMenu.style.background = backgroundMenuNone
   }
-  console.log('0 --> ' + allSection[0].offsetTop)
-  console.log('1 --> ' + allSection[1].offsetTop)
-  console.log('2 --> ' + allSection[2].offsetTop)
-  console.log('3 --> ' + allSection[3].offsetTop)
-  console.log('4 --> ' + allSection[4].offsetTop)
-  console.log('5 --> ' + allSection[5].offsetTop)
-  console.log('6 --> ' + allSection[6].offsetTop)
 })
