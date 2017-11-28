@@ -2,9 +2,11 @@
     background: #131313;
     padding: 20px 0px;
     @include medium {
+        margin-top: 70px;
         padding: 40px;
     }
     @include large {
+        margin-top: 120px;
         padding: 40px;
     }
     h3 {

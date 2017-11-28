@@ -1,3 +1,5 @@
+const fixeMenu = document.querySelector('.menu')
+const allSection = document.querySelectorAll('section')
 const cameras = document.getElementsByClassName('radar__sensors')
 const cameraSelect = document.querySelectorAll('.sensors__legend input')
 const screenPulse = document.getElementsByClassName('screen_pulse')
@@ -27,7 +29,8 @@ const explainationTexts = {
 let bool = true
 let currentExplanation = ''
 let screenExplanations = []
-
+let backgroundMenuColor = 'rgba(20, 20, 20, 1)'
+let backgroundMenuNone = 'rgba(20, 20, 20, 0)'
 //Initialisation screenExplanation
 
 for (let i = 0; i < tempScreenExplanations.length; i++) {
@@ -137,7 +140,39 @@ for (let i = 0; i < cameraSelect.length; i++) {
     } else {
       cameras[i].style.display = 'none'
     }
-    console.log(this)
-    console.log(cameras[i])
   })
 }
+
+window.addEventListener('scroll', function changeBackground () {
+  if (this.scrollY > allSection[6].offsetTop) {
+    fixeMenu.style.background = backgroundMenuNone
+  }
+  else if (this.scrollY > (allSection[5].offsetTop - allSection[5].scrollHeight/2)) {
+    fixeMenu.style.background = backgroundMenuColor
+  }
+  else if (this.scrollY > allSection[4].offsetTop) {
+    fixeMenu.style.background = backgroundMenuNone
+  }
+  else if (this.scrollY > allSection[3].offsetTop) {
+    fixeMenu.style.background = backgroundMenuColor
+  }
+  else if (this.scrollY > allSection[2].offsetTop) {
+    fixeMenu.style.background = backgroundMenuNone
+  }
+  else if (this.scrollY > allSection[1].offsetTop) {
+    fixeMenu.style.background = backgroundMenuColor
+  }
+  else if (this.scrollY > allSection[0].offsetTop) {
+    fixeMenu.style.background = backgroundMenuNone
+  }
+  else {
+    fixeMenu.style.background = backgroundMenuNone
+  }
+  console.log('0 --> ' + allSection[0].offsetTop)
+  console.log('1 --> ' + allSection[1].offsetTop)
+  console.log('2 --> ' + allSection[2].offsetTop)
+  console.log('3 --> ' + allSection[3].offsetTop)
+  console.log('4 --> ' + allSection[4].offsetTop)
+  console.log('5 --> ' + allSection[5].offsetTop)
+  console.log('6 --> ' + allSection[6].offsetTop)
+})
