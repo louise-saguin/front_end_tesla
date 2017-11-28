@@ -52,7 +52,7 @@
         }
     }
 }
-//
+
 .motor__img-end {
     display: none;
 
@@ -74,7 +74,7 @@
     @include large {
 
         img {
-            top: 0%;
+            top: -17%;
             right: -120%;
             height: auto;
             max-width: 1600px;
