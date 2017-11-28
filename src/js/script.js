@@ -1,3 +1,5 @@
+const cameras = document.getElementsByClassName('radar__sensors')
+const cameraSelect = document.querySelectorAll('.sensors__legend input')
 const screenPulse = document.getElementsByClassName('screen_pulse')
 const tempScreenExplanations = document.getElementsByClassName('explanation__screen')
 const screen = document.getElementsByClassName('screen__img')
@@ -31,8 +33,6 @@ let screenExplanations = []
 for (let i = 0; i < tempScreenExplanations.length; i++) {
   screenExplanations[tempScreenExplanations[i].classList[1]] = tempScreenExplanations[i]
 }
-
-console.log(personaliseTesla[0])
 
 // Personalise Tesla
 
@@ -126,4 +126,18 @@ function displayBoxMobile (current) {
   } else if (current === 'navigation') {
     screen[0].innerHTML = changeScreen('navigation')
   }
+}
+
+// Cameras sensors
+
+for (let i = 0; i < cameraSelect.length; i++) {
+  cameraSelect[i].addEventListener('change', function () {
+    if (this.checked) {
+      cameras[i].style.display = 'block'
+    } else {
+      cameras[i].style.display = 'none'
+    }
+    console.log(this)
+    console.log(cameras[i])
+  })
 }
