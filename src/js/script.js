@@ -1,3 +1,5 @@
+const cameras = document.getElementsByClassName('radar__sensors')
+const cameraSelect = document.querySelectorAll('.sensors__legend input')
 const screenPulse = document.getElementsByClassName('screen_pulse')
 const tempScreenExplanations = document.getElementsByClassName('explanation__screen')
 const screen = document.getElementsByClassName('screen__img')
@@ -32,11 +34,9 @@ for (let i = 0; i < tempScreenExplanations.length; i++) {
   screenExplanations[tempScreenExplanations[i].classList[1]] = tempScreenExplanations[i]
 }
 
-console.log(personaliseTesla[0])
-
 // Personalise Tesla
 
-function displayPicture (id, currentElement) {
+function displayPicture(id, currentElement) {
   const currentActive = document.querySelector('.inner-color.active')
   if (currentActive !== 'null') {
     currentActive.classList.remove('active')
@@ -46,11 +46,11 @@ function displayPicture (id, currentElement) {
   buttonColor[0].classList.add('active')
 }
 
-function pictureModel (imageSrc) {
+function pictureModel(imageSrc) {
   return '<img src="src/img/' + imageSrc + '-300.png" alt="Tesl Model S - ' + imageSrc + '"' +
-          'srcset="src/img/' + imageSrc + '-450.png 450w,' +
-          'src/img/' + imageSrc + '.png 650w"' +
-          'sizes="(min-width: 650px) 650px, (min-width: 450px) 450px, 300px">'
+    'srcset="src/img/' + imageSrc + '-450.png 450w,' +
+    'src/img/' + imageSrc + '.png 650w"' +
+    'sizes="(min-width: 650px) 650px, (min-width: 450px) 450px, 300px">'
 }
 
 personaliseTesla[0].addEventListener('click', function (e) {
@@ -90,7 +90,7 @@ screenPulse[0].addEventListener('click', function () {
         } else if (this.classList[1] === 'navigation') {
           screen[0].innerHTML = changeScreen('navigation')
         }
-      } else { 
+      } else {
         if (screenExplanations['mobile'].classList.contains('active')) {
           if (currentExplanation !== this.classList[1]) {
             displayBoxMobile(this.classList[1])
@@ -106,18 +106,18 @@ screenPulse[0].addEventListener('click', function () {
   }
 })
 
-function displayBox (current) {
+function displayBox(current) {
   screenExplanations[current].classList.toggle('active')
 }
 
-function changeScreen (next) {
+function changeScreen(next) {
   return '<img src="src/img/' + next + '_250.png" alt="Ecran tactile - ' + next + '"' +
-          'srcset="src/img/' + next + '_350.png 465w,' +
-          'src/img/' + next + '_450.png 650w"' +
-          'sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px">'
+    'srcset="src/img/' + next + '_350.png 465w,' +
+    'src/img/' + next + '_450.png 650w"' +
+    'sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px">'
 }
 
-function displayBoxMobile (current) {
+function displayBoxMobile(current) {
   screenExplanations['mobile'].children[0].innerHTML = explainationTexts[current][0]
   screenExplanations['mobile'].children[1].innerHTML = explainationTexts[current][1]
   currentExplanation = current
@@ -126,4 +126,18 @@ function displayBoxMobile (current) {
   } else if (current === 'navigation') {
     screen[0].innerHTML = changeScreen('navigation')
   }
+}
+
+// Cameras sensors
+
+for (let i = 0; i < cameraSelect.length; i++) {
+  cameraSelect[i].addEventListener('change', function () {
+    if (this.checked) {
+      cameras[i].style.display = 'block'
+    } else {
+      cameras[i].style.display = 'none'
+    }
+    console.log(this)
+    console.log(cameras[i])
+  })
 }
