@@ -21,7 +21,7 @@
 
     @include medium {
         top:-30%;
-        left: 40px;
+        left: 45px;
         transform: inherit;
     }
 }
@@ -69,9 +69,14 @@
 
     @include medium {
         height: 800px;
-        padding: 130px 0px 0px 70px;
+        padding: 150px 0px 0px 100px;
         text-align: left;
+        width: 50%;
+    }
+    
+    @include large {
         width: 55%;
+        padding: 150px 0px 0px 190px;
     }
 }
 

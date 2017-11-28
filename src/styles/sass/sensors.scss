@@ -32,12 +32,11 @@
     }
 
     @include large {
-        height: 790px;
+        height: 630px;
 
         img {
             @include centerX;
-            height: 100%;
-            width: auto;
+            width: 100%;
         }
     }
 }
@@ -50,7 +49,7 @@
     align-items: flex-start;
 
     @include medium {
-        padding: 50px 0px 100px 0px;
+        padding-bottom: 100px;
     }
 }
 

@@ -130,8 +130,8 @@ h1 {
         line-height: 51px;
     }
     @include large {
-        font-size: 75px;
-        line-height: 76px;
+        font-size: 60px;
+        line-height: 61px;
     }
 }
 
@@ -149,9 +149,15 @@ h3 {
 p {
     line-height: 33px;
     font-weight: $font-light;
+
     @include medium {
         font-size: 16.5px;
         line-height: 28px;
+    }
+
+    @include large {
+        font-size: 18px;
+        line-height: 33px;
     }
 }
 
