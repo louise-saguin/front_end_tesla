@@ -1,15 +1,46 @@
+// ON PAGE LOAD
+window.addEventListener('load', function () {
+document.querySelector('.teslaSVideo').setAttribute('src', 'src/img/tesla_modelS_vid.mp4')
+let security1 = document.querySelector('.tesla-security1')
+let security2 = document.querySelector('.tesla-security2')
+
+// First Image
+security1.setAttribute('src', 'src/img/tesla-security-659.png')
+security1.setAttribute('srcset', 'src/img/tesla-security-500.png 500w, src/img/tesla-security-659.png 659w')
+
+// First Image
+security2.setAttribute('src', 'src/img/tesla-security2-1094.png')
+security2.setAttribute('srcset', 'src/img/tesla-security2-750.png 750w, src/img/tesla-security2-1094.png 1094w')
+
+/*************************************** 
+
+      Function part
+
+************************************** */
+
+/* Menu */
+
 const fixeMenu = document.querySelector('.menu')
 const allSection = document.querySelectorAll('section')
+
+/* Tactile screen */
+
 const cameras = document.getElementsByClassName('radar__sensors')
 const cameraSelect = document.querySelectorAll('.sensors__legend input')
 const screenPulse = document.getElementsByClassName('screen_pulse')
 const tempScreenExplanations = document.getElementsByClassName('explanation__screen')
 const screen = document.getElementsByClassName('screen__img')
+
+/* Personalise */
+
 const personaliseTesla = document.getElementsByClassName('personaliseTesla')
 const popup = document.getElementsByClassName('personalize__popup')
 const carColor = document.getElementsByClassName('currentCar__color')
 const colorsBtn = document.getElementsByClassName('color')
 const closePopup = document.getElementsByClassName('closePopup')
+
+/* Menu JSON */
+
 const colors = {
   black: 'black-noir-uni',
   grey: 'mdinight-silver-gris-nuit',
@@ -19,6 +50,9 @@ const colors = {
   white: 'white-blanc-uni',
   red: 'red-multi-coat-rouge'
 }
+
+/* Personalise JSON*/
+
 const explainationTexts = {
   navigation: ['Navigation', 'Une navigation intelligente qui s\'adapte aux conditions de circulation en temps réel.'],
   map: ['Carte', 'Accès aux cartes Google Maps™ simples et intuitives qui vous informent en temps réel sur les conditions de circulation.'],
@@ -26,11 +60,14 @@ const explainationTexts = {
   control: ['Contrôles', 'Ajustement de la position de conduite, gestion de la température et de l\'habitacle.']
 }
 
+/* Variables */
+
 let bool = true
 let currentExplanation = ''
 let screenExplanations = []
 let backgroundMenuColor = 'rgba(20, 20, 20, 1)'
 let backgroundMenuNone = 'rgba(20, 20, 20, 0)'
+
 //Initialisation screenExplanation
 
 for (let i = 0; i < tempScreenExplanations.length; i++) {
@@ -75,7 +112,7 @@ closePopup[0].addEventListener('click', function (e) {
   popup[0].classList.toggle('hide')
 })
 
-// Tactile Screen !
+// Tactile Screen
 
 screenPulse[0].addEventListener('click', function () {
   screen[0].innerHTML = changeScreen('navigation')
@@ -170,4 +207,6 @@ window.addEventListener('scroll', function changeBackground () {
   else {
     fixeMenu.style.background = backgroundMenuNone
   }
+})
+
 })
