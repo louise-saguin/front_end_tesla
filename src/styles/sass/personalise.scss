@@ -1,86 +1,84 @@
+//Personalize 
 .personalize__popup {
-  position: fixed;
-  padding: $section-padding;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-
-  h1 {
-    width: $full-width;
-    text-align: center;
-    color: $black;
-  }
-
-  .closePopup {
-    float: right;
-    top: 10px;
-    right: 10px;
-    color: #000;
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-
-}
-
-.personalize__popup.hide {
-  display: none;
+    position: fixed;
+    padding: $section-padding;
+    top: 60px;
+    left: 50%;
+    background: white;
+    box-shadow: 0px 0px 43px -8px rgba(0, 0, 0, 0.45);
+    transform: translateX(-50%) scaleX(1);
+    transform-origin: right center;
+    transition: transform 0.3s;
+    z-index: 10;
+    h1 {
+        width: $full-width;
+        font-size: 2em;
+        text-align: center;
+        color: $black;
+    }
+    .closePopup {
+        float: right;
+        top: 10px;
+        right: 10px;
+        color: #000;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    &.hide {
+        transform: translateX(-50%) scaleX(0);
+    }
 }
 
 .colors {
-  width: 100%;
-  text-align: center;
-  height: $colors-ring;
-  margin-bottom: $section-padding;
-
-  .color {
-    display: inline-block;
-    background: $inner-color;
-    width: $colors-ring;
-    height: $colors-ring;
-    border-radius: 100%;
-    cursor: pointer;
-  }
-
-  .inner-color {
     width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    transform-origin: center center;
-    transform: scale(0.5);
-    transition: transform 0.3s;
-  }
-
-  .inner-color.active {
-    transform: scale(1);
-    cursor: default;
-    content: "ok";
-  }
-
-  .black.inner-color {
-    background: $black;
-  }
-  .grey.inner-color {
-    background: $grey;
-  }
-  .black_metal.inner-color {
-    background: $black_metal;
-  }
-  .blue.inner-color {
-    background: $blue;
-  }
-  .silver.inner-color {
-    background: $silver;
-  }
-  .white.inner-color {
-    background: $white;
-  }
-  .red.inner-color {
-    background: $red;
-  }
+    text-align: center;
+    height: $colors-ring;
+    margin-bottom: $section-padding;
+    .color {
+        display: inline-block;
+        background: $inner-color;
+        width: $colors-ring;
+        height: $colors-ring;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+    .inner-color {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        transform-origin: center center;
+        transform: scale(0.5);
+        transition: transform 0.3s;
+    }
+    .inner-color.active {
+        transform: scale(1);
+        cursor: default;
+        content: "ok";
+    }
+    .black.inner-color {
+        background: $black;
+    }
+    .grey.inner-color {
+        background: $grey;
+    }
+    .black_metal.inner-color {
+        background: $black_metal;
+    }
+    .blue.inner-color {
+        background: $blue;
+    }
+    .silver.inner-color {
+        background: $silver;
+    }
+    .white.inner-color {
+        background: $white;
+    }
+    .red.inner-color {
+        background: $red;
+    }
 }
 
 .cars {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }

@@ -1,38 +1,31 @@
 //@import "config.scss";
-
 .motor {
-    padding: 75px 0px 110px 0px;
-
+    padding: 75px 0px 120px 0px;
     @include medium {
         margin-top: 440px;
         padding: 0px;
     }
-    
     @include large {
         margin-top: 640px;
+        margin-bottom: 150px;
     }
 }
 
 .motor__block {
-
     @include medium {
         display: flex;
         height: 450px;
     }
 }
 
-
 .motor__img {
-
     img {
         width: 100%;
         padding: 50px 0px;
     }
-
     @include medium {
         width: 50%;
         position: relative;
-
         img {
             width: auto;
             padding: 0;
@@ -42,9 +35,7 @@
             height: 100%;
         }
     }
-
     @include large {
-
         img {
             top: -45%;
             height: auto;
@@ -55,12 +46,10 @@
 
 .motor__img-end {
     display: none;
-
     @include medium {
         display: block;
         width: 50%;
         position: relative;
-
         img {
             width: auto;
             padding: 0;
@@ -70,9 +59,7 @@
             height: 100%;
         }
     }
-
     @include large {
-
         img {
             top: -17%;
             right: -120%;
@@ -82,46 +69,56 @@
     }
 }
 
-.motor__pulse {
-    display: none;
+//Motor pulse
+// .motor__pulse {
+//     display: none;
+//     @include medium {
+//         display: block;
+//         z-index: 1;
+//         @include centerY;
+//         width: 30px;
+//         height: 30px;
+//         border-radius: 100px;
+//         animation: out 1.5s infinite ease-out;
+//         background: $white;
+//     }
+// }
 
-    @include large {
-        display: block;
-        z-index: 1;
-        @include centerY;
-        left: 45%;
-        width: 50px;
-        height: 50px;
-        border-radius: 100px;
-        animation: out 1.5s infinite ease-out;
-        background: $white;
-    }
-}
+// .motor__front {
 
-@keyframes out {
-    0% {box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 1);} 
-    100% {box-shadow: 0px 0px 0px 100px rgba(255, 255, 255, 0.0);}
-}
+// }
+
+// .motor__end {
+//     @include medium {
+//         right: 400px;
+//         top: 80px;
+//     }
+// }
+
+// @keyframes out {
+//     0% {
+//         box-shadow: 0px 0px 0px 0px rgba(142, 142, 142, 0.8);
+//     }
+//     100% {
+//         box-shadow: 0px 0px 0px 30px rgba(142, 142, 142, 0);
+//     }
+// }
 
 .motor__title {
     text-align: center;
     color: $dark-grey;
-
     @include medium {
         text-align: right;
     }
 }
 
 .motor__text {
-
     p {
         text-align: center;
         color: $dark-grey;
     }
-
     @include medium {
         width: 50%;
-
         p {
             padding-top: 100px;
             text-align: right;

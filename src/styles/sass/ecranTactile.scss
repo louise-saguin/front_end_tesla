@@ -1,13 +1,13 @@
 .tactile__screen {
     background: #131313;
-    padding: 20px 0px;
+    padding: 30px 0px;
     @include medium {
         margin-top: 70px;
-        padding: 40px;
+        padding: 70px;
     }
     @include large {
         margin-top: 120px;
-        padding: 40px;
+        padding: 70px;
     }
     h3 {
         color: #ffffff;
@@ -43,6 +43,7 @@
 .screen__img {
     display: inline-block;
     width: 100%;
+    transition: opacity 0.3s;
     img {
         width: 100%;
         height: auto;
@@ -62,6 +63,11 @@
     background: #131313;
     color: #fff;
     max-width: 150px;
+    @include med__small {
+        display: block;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
     @include medium {
         max-width: 200px;
     }
@@ -83,7 +89,7 @@
 
 .explanation__screen.active {
     @include med__small {
-        display: block;
+        transform: scaleX(1);
     }
 }
 
@@ -96,6 +102,7 @@
 
 // RIGHT box explanation
 .explanation__screen.navigation {
+    transform-origin: center right;
     @include med__small {
         top: 30px;
         right: -145px;
@@ -107,6 +114,7 @@
 }
 
 .explanation__screen.energie {
+    transform-origin: center right;
     @include med__small {
         top: 140px;
         right: -125px;
@@ -123,6 +131,7 @@
 
 // LEFT box
 .explanation__screen.map {
+    transform-origin: center left;
     @include med__small {
         top: 105px;
         left: -150px;
@@ -138,6 +147,7 @@
 }
 
 .explanation__screen.control {
+    transform-origin: center left;
     @include med__small {
         top: 280px;
         left: -130px;
@@ -169,6 +179,7 @@
     animation: out 1s infinite ease-out;
     background: #eee;
     cursor: pointer;
+    z-index: 2;
 }
 
 .screen_pulse.start {
@@ -223,7 +234,6 @@
     }
 }
 
-//
 .screen_pulse.control {
     left: 30px;
     top: 335px;
@@ -250,7 +260,7 @@
         box-shadow: 0px 0px 0px 0px rgba(142, 142, 142, 0.8);
     }
     100% {
-        box-shadow: 0px 0px 0px 10px rgba(142, 142, 142, 0);
+        box-shadow: 0px 0px 0px 30px rgba(142, 142, 142, 0);
     }
 }
 

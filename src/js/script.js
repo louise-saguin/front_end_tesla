@@ -16,7 +16,7 @@ security2.setAttribute('srcset', 'src/img/tesla-security2-750.png 750w, src/img/
 
       Function part
 
-************************************** */
+***************************************/
 
 /* Menu */
 
@@ -68,6 +68,7 @@ const explainationTexts = {
 let bool = true
 let currentExplanation = ''
 let screenExplanations = []
+let timeOutImg = 100
 let backgroundMenuColor = 'rgba(20, 20, 20, 1)'
 let backgroundMenuNone = 'rgba(20, 20, 20, 0)'
 
@@ -156,7 +157,10 @@ document.addEventListener('keydown', function (e) {
 // Tactile Screen
 
 screenPulse[0].addEventListener('click', function () {
-  screen[0].innerHTML = changeScreen('navigation')
+  screen[0].style.opacity = '0'
+  setTimeout(function () {
+    changeScreen('navigation')
+  }, timeOutImg)
   this.classList.remove('active')
   this.classList.add('hide')
 
@@ -167,9 +171,15 @@ screenPulse[0].addEventListener('click', function () {
       if (window.innerWidth >= 520) {
         displayBox(this.classList[1])
         if (this.classList[1] === 'map') {
-          screen[0].innerHTML = changeScreen('map')
+          screen[0].style.opacity = '0'
+          setTimeout(function () {
+            changeScreen('map')
+          }, timeOutImg)
         } else if (this.classList[1] === 'navigation') {
-          screen[0].innerHTML = changeScreen('navigation')
+          screen[0].style.opacity = '0'
+          setTimeout(function () {
+            changeScreen('navigation')
+          }, timeOutImg)
         }
       } else {
         if (screenExplanations['mobile'].classList.contains('active')) {
@@ -192,10 +202,12 @@ function displayBox(current) {
 }
 
 function changeScreen(next) {
-  return '<img src="src/img/' + next + '_250.png" alt="Ecran tactile - ' + next + '"' +
-    'srcset="src/img/' + next + '_350.png 465w,' +
-    'src/img/' + next + '_450.png 650w"' +
-    'sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px">'
+  let src = '<img src="src/img/' + next + '_250.png" alt="Ecran tactile - ' + next + '"' +
+            'srcset="src/img/' + next + '_350.png 465w,' +
+            'src/img/' + next + '_450.png 650w"' +
+            'sizes="(min-width: 650px) 450px, (min-width: 450px) 350px, 250px">'
+  screen[0].style.opacity = '1';
+  screen[0].innerHTML = src;
 }
 
 function displayBoxMobile(current) {
