@@ -22,6 +22,9 @@ security2.setAttribute('srcset', 'src/img/tesla-security2-750.png 750w, src/img/
 
 const fixeMenu = document.querySelector('.menu')
 const allSection = document.querySelectorAll('section')
+const burger = document.querySelector('.menu__burger')
+const burgerContent = document.querySelector('.menu__burger__content')
+const burgerLink = document.querySelectorAll('.menu__burger__content a')
 
 /* Tactile screen */
 
@@ -68,6 +71,24 @@ let screenExplanations = []
 let backgroundMenuColor = 'rgba(20, 20, 20, 1)'
 let backgroundMenuNone = 'rgba(20, 20, 20, 0)'
 
+//Functional burger menu
+burger.addEventListener('click', function () {
+  if (burgerContent.classList.contains('active')) {
+    burgerContent.style.transform = 'scaleY(0)'
+    burgerContent.classList.remove('active')
+  } else {
+    burgerContent.style.transform = 'scaleY(1)'
+    burgerContent.classList.add('active')
+  }
+})
+
+  for (let i = 0; i < burgerLink.length; i++) {
+    burgerLink[i].addEventListener('click', function (e) {
+      burgerContent.style.transform = 'scaleY(0)'
+      burgerContent.classList.remove('active')
+    })
+  }
+
 //Initialisation screenExplanation
 
 for (let i = 0; i < tempScreenExplanations.length; i++) {
@@ -107,9 +128,29 @@ personaliseTesla[0].addEventListener('click', function (e) {
   }
 })
 
+  personaliseTesla[1].addEventListener('click', function (e) {
+    e.preventDefault()
+    popup[0].classList.toggle('hide')
+    if (bool) {
+      for (let i = 0; i < colorsBtn.length; i++) {
+        colorsBtn[i].addEventListener('click', function () {
+          displayPicture(this.classList[1], this)
+        })
+      }
+
+      bool = false
+    }
+  })
+
 closePopup[0].addEventListener('click', function (e) {
   e.preventDefault()
   popup[0].classList.toggle('hide')
+})
+
+document.addEventListener('keydown', function (e) {
+  if (e.keyCode === 27) {
+    popup[0].classList.add('hide')
+  }
 })
 
 // Tactile Screen
@@ -183,29 +224,33 @@ for (let i = 0; i < cameraSelect.length; i++) {
 // Listen scroll to change background menu
 
 window.addEventListener('scroll', function changeBackground () {
-  if (this.scrollY > allSection[6].offsetTop) {
-    fixeMenu.style.background = backgroundMenuNone
-  }
-  else if (this.scrollY > (allSection[5].offsetTop - allSection[5].scrollHeight/2)) {
+  if (window.innerWidth > 909) {
+    if (this.scrollY > allSection[6].offsetTop) {
+      fixeMenu.style.background = backgroundMenuNone
+    }
+    else if (this.scrollY > (allSection[5].offsetTop - allSection[5].scrollHeight / 2)) {
+      fixeMenu.style.background = backgroundMenuColor
+    }
+    else if (this.scrollY > allSection[4].offsetTop) {
+      fixeMenu.style.background = backgroundMenuNone
+    }
+    else if (this.scrollY > allSection[3].offsetTop) {
+      fixeMenu.style.background = backgroundMenuColor
+    }
+    else if (this.scrollY > allSection[2].offsetTop) {
+      fixeMenu.style.background = backgroundMenuNone
+    }
+    else if (this.scrollY > allSection[1].offsetTop) {
+      fixeMenu.style.background = backgroundMenuColor
+    }
+    else if (this.scrollY > allSection[0].offsetTop) {
+      fixeMenu.style.background = backgroundMenuNone
+    }
+    else {
+      fixeMenu.style.background = backgroundMenuNone
+    }
+  } else {
     fixeMenu.style.background = backgroundMenuColor
-  }
-  else if (this.scrollY > allSection[4].offsetTop) {
-    fixeMenu.style.background = backgroundMenuNone
-  }
-  else if (this.scrollY > allSection[3].offsetTop) {
-    fixeMenu.style.background = backgroundMenuColor
-  }
-  else if (this.scrollY > allSection[2].offsetTop) {
-    fixeMenu.style.background = backgroundMenuNone
-  }
-  else if (this.scrollY > allSection[1].offsetTop) {
-    fixeMenu.style.background = backgroundMenuColor
-  }
-  else if (this.scrollY > allSection[0].offsetTop) {
-    fixeMenu.style.background = backgroundMenuNone
-  }
-  else {
-    fixeMenu.style.background = backgroundMenuNone
   }
 })
 
