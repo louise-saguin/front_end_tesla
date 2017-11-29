@@ -34,6 +34,8 @@ const allSection = document.querySelectorAll('section')
 const burger = document.querySelector('.menu__burger')
 const burgerContent = document.querySelector('.menu__burger__content')
 const burgerLink = document.querySelectorAll('.menu__burger__content a')
+const allLink = document.querySelectorAll('a')
+const mainElement = document.body
 
 /* Tactile screen */
 
@@ -78,6 +80,8 @@ let bool = true
 let currentExplanation = ''
 let screenExplanations = []
 let timeOutImg = 100
+let scrollDuration = 300
+let reg = /^\#[a-z]+$/i
 let backgroundMenuColor = 'rgba(20, 20, 20, 1)'
 let backgroundMenuNone = 'rgba(20, 20, 20, 0)'
 
@@ -276,5 +280,18 @@ window.addEventListener('scroll', function changeBackground () {
     fixeMenu.style.background = backgroundMenuColor
   }
 })
+
+// Scroll to section
+for (let i = 0; i < allLink.length; i++) {
+  let currentSrc = allLink[i].getAttribute('href')
+  if (reg.test(currentSrc)) {
+    allLink[i].addEventListener('click', function (e) {
+      e.preventDefault()
+      let currentElement = document.querySelector(this.getAttribute('href'))
+      let posY = currentElement.offsetTop
+      window.scrollTo(0, posY)
+    })
+  }
+}
 
 })
