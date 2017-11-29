@@ -1,12 +1,10 @@
-//@import 'config.scss';
-
 .menu {
     position: fixed;
     height: 48px;
-    background: $black;
     width: 100%;
+    background: $black;
     z-index: 2;
-
+    transition: background 0.3s;
     .container {
         height: 100%;
     }
@@ -15,26 +13,26 @@
         background: none;
         height: 80px;
     }
-
     @include large {
         height: 100px;
     }
 }
 
-.menu__content { 
+.menu__content {
     position: relative;
     height: 100%;
     width: 100%;
     float: left;
 }
 
+// Burger menu
 .menu__burger {
     width: 20px;
     height: 3px;
     background-color: $white;
     @include centerY;
     right: 0px;
-
+    cursor: pointer;
     &:before {
         content: "";
         position: absolute;
@@ -42,8 +40,8 @@
         width: 20px;
         height: 3px;
         background-color: $white;
+        cursor: pointer;
     }
-
     &:after {
         content: "";
         position: absolute;
@@ -51,36 +49,56 @@
         width: 20px;
         height: 3px;
         background-color: $white;
+        cursor: pointer;
     }
-
     @include medium {
         display: none;
     }
-}  
+}
+
+.menu__burger__content {
+    position: fixed;
+    width: 100vw;
+    margin-left: -40px;
+    text-align: center;
+    background: $black;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.3s;
+    z-index: 3;
+    @include medium {
+        display: none;
+    }
+    a {
+        display: block;
+        padding: 10px 0px;
+        transition: background 0.3s;
+        color: #efefef;
+    }
+    a:hover {
+        background: #777777;
+    }
+}
 
 .menu__link {
     color: $white;
     height: 100%;
-
     a {
         text-transform: uppercase;
         font-size: 13px;
+        font-weight: $font-bold;
 
         &:not(first-child) {
             display: none;
-
             @include medium {
                 display: block;
             }
         }
-
         &:first-child {
-            width:110px;
+            width: 110px;
             height: 100%;
             display: inline-block;
-
         }
-
         &:last-child {
             position: relative;
             background-color: $red;
@@ -90,12 +108,11 @@
             box-shadow: 1px 10px 38px 0px rgba(0, 0, 0, 0.4);
             width: 175px;
             height: 45px;
-            
+
             @include medium {
                 display: block;
             }
         }
-
         .menu__logo--small {
             @include centerY;
             width: 30%;
@@ -105,18 +122,16 @@
                 display: none;
             }
         }
-
         .menu__logo--large {
             display: none;
             @include centerY;
             width: 10%;
 
             @include medium {
-                display: block; 
+                display: block;
             }
         }
     }
-
     @include medium {
         display: flex;
         justify-content: space-between;
@@ -124,14 +139,12 @@
     }
 }
 
-
 .button__content {
     position: absolute;
     @include centerXY;
     width: 100%;
     height: 100%;
     overflow: hidden;
-
     .button__animation {
         position: absolute;
         width: 100%;
@@ -140,7 +153,6 @@
         transform: translateX(101%);
         transition: all 0.3s ease;
     }
-
     .button__text {
         position: absolute;
         @include centerXY;
@@ -148,15 +160,10 @@
 }
 
 .menu__link a:last-child {
-    
     &:hover {
         color: $red;
-        
         .button__animation {
             transform: translateX(0%);
         }
     }
 }
-
-
-

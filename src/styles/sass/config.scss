@@ -1,10 +1,8 @@
 // RESPONSIVE Value 
-
 $small: 330px;
 $med__small: 520px;
 $medium: 910px;
 $large: 1200px;
-
 // Responsive Mixin
 @mixin med__small {
     @media (min-width: #{$med__small}) {
@@ -29,6 +27,7 @@ $font-family: 'CamphorPro';
 $font-bold: 700;
 $font-heavy: 800;
 $font-light: 200;
+
 @font-face {
     font-family: 'CamphorPro';
     src: url('../../src/font/CamphorPro/CamphorPro-Regular.ttf') format('truetype');
@@ -77,7 +76,9 @@ $colors-ring: 25px;
 $full-width: 100%;
 $section-padding: 20px;
 $inner-section-padding: $section-padding / 2;
+
 // PAGE
+
 * {
     box-sizing: border-box;
     font-smoothing: antialiased;
@@ -92,6 +93,7 @@ body {
 
 body {
     overflow-y: hidden;
+    transition: transform 0.3s;
 }
 
 .container {
@@ -113,10 +115,11 @@ body {
 
 // ELEMENT
 a {
-    text-transform: uppercase;
     text-decoration: none;
-    font-weight: $font-bold;
-    color: $white;
+    &:hover {
+        color: $red;
+        transition: all 0.2s ease;
+    }
 }
 
 h1 {
@@ -130,8 +133,8 @@ h1 {
         line-height: 51px;
     }
     @include large {
-        font-size: 75px;
-        line-height: 76px;
+        font-size: 60px;
+        line-height: 61px;
     }
 }
 
@@ -152,6 +155,10 @@ p {
     @include medium {
         font-size: 16.5px;
         line-height: 28px;
+    }
+    @include large {
+        font-size: 18px;
+        line-height: 33px;
     }
 }
 

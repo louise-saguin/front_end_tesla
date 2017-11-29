@@ -40,5 +40,5 @@ gulp build
 * Rayane Habache [@RayaneHabache](https://github.com/Rayane-H)
 * Paul Andrianoff [@PaulAndrianoff](https://github.com/PaulAndrianoff)
 * Louise Saguin [@LouiseSaguin](https://github.com/louise-saguin)
-* Vanessa Gimbert
+* Vanessa Gimbert [@VanessaGimbert](https://github.com/VanessaGimbert)
 

@@ -13,13 +13,11 @@
     width: 100%;
     position: relative;
     height: 450px;
+    
     img {
         @include centerX;
         height: 100%;
         width: auto;
-    }
-    .radar__sensors {
-        display: none;
     }
     @include medium {
         width: 100%;
@@ -29,11 +27,11 @@
         }
     }
     @include large {
-        height: 790px;
+        height: 630px;
+        
         img {
             @include centerX;
-            height: 100%;
-            width: auto;
+            width: 100%;
         }
     }
 }
@@ -45,7 +43,7 @@
     flex-flow: row wrap;
     align-items: flex-start;
     @include medium {
-        padding: 50px 0px 100px 0px;
+        padding-bottom: 100px;
     }
 }
 
