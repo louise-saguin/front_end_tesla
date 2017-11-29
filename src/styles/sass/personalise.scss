@@ -1,9 +1,10 @@
-//Personalize 
+//Personalize
 .personalize__popup {
     position: fixed;
     padding: $section-padding;
     top: 60px;
     left: 50%;
+    display: none;
     background: white;
     box-shadow: 0px 0px 43px -8px rgba(0, 0, 0, 0.45);
     transform: translateX(-50%) scaleX(1);

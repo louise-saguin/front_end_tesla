@@ -1,6 +1,13 @@
 // ON PAGE LOAD
 window.addEventListener('load', function () {
-document.querySelector('.teslaSVideo').setAttribute('src', 'src/img/tesla_modelS_vid.mp4')
+if ( window.innerWidth > 1200) {
+  document.querySelector('.teslaSVideo').setAttribute('src', 'src/img/tesla_modelS_1920.mp4')
+} else if (window.innerWidth > 13) {
+  document.querySelector('.teslaSVideo').setAttribute('src', 'src/img/tesla_modelS_910.mp4')
+} else {
+  document.querySelector('.teslaSVideo').setAttribute('src', 'src/img/tesla_modelS_vid.mp4')
+}
+
 let security1 = document.querySelector('.tesla-security1')
 let security2 = document.querySelector('.tesla-security2')
 
@@ -12,6 +19,8 @@ security1.setAttribute('srcset', 'src/img/tesla-security-500.png 500w, src/img/t
 security2.setAttribute('src', 'src/img/tesla-security2-1094.png')
 security2.setAttribute('srcset', 'src/img/tesla-security2-750.png 750w, src/img/tesla-security2-1094.png 1094w')
 
+// Video 2 (Conduite automatic)
+  document.querySelector('.automation__video video').setAttribute('src', 'src/img/pilotage_autonome.mp4')
 /*************************************** 
 
       Function part
@@ -95,6 +104,8 @@ burger.addEventListener('click', function () {
 for (let i = 0; i < tempScreenExplanations.length; i++) {
   screenExplanations[tempScreenExplanations[i].classList[1]] = tempScreenExplanations[i]
 }
+
+popup[0].style.display = 'block'
 
 // Personalise Tesla
 
