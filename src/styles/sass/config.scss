@@ -113,10 +113,12 @@ body {
 
 // ELEMENT
 a {
-    text-transform: uppercase;
     text-decoration: none;
-    font-weight: $font-bold;
-    color: $white;
+    
+    &:hover {
+        color: $red;
+        transition: all 0.2s ease;
+        }
 }
 
 h1 {
